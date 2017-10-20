@@ -1,8 +1,6 @@
 <ion-view view-title="{{vm.title}}" ng-controller="HomeController as vm">
   <ion-content class="padding">
-    <p>
-      This is a product.
-    </p>
-    <input type="text" ng-model="vm.phone" number-only placeholder="Enter your phone"/>
+    <input type="text" ng-model="vm.email" placeholder="Enter your email"/>
+    <button ion-button ng-click="vm.register()">Register</button>
   </ion-content>
 </ion-view>

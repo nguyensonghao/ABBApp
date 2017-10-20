@@ -1,4 +1,4 @@
-angular.module('AbbApp', ['ionic']).config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('home', {
             url: '/home',
