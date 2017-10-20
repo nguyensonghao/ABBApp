@@ -9915,6 +9915,24 @@ a.button {
 .btn-black {
   background: black; }
 
+.button-around {
+  border-radius: 30px; }
+
+.input-field {
+  position: relative;
+  padding-left: 40px;
+  border: none;
+  border-bottom: 1px solid #ADADAD;
+  margin-bottom: 1px; }
+  .input-field .icon {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute; }
+    .input-field .icon i {
+      font-size: 20px;
+      font-weight: bold; }
+
 .icon-star-menu {
   background-image: url("../img/icon-star.png");
   background-repeat: no-repeat;
