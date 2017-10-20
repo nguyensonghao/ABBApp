@@ -2,15 +2,15 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cleanCss = require('gulp-clean-css');
 var rename = require('gulp-rename');
+var browserSync = require('browser-sync').create();
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./www/scss/**/*.scss'],
+  main: ['./www/scss/main.scss']
 };
 
-gulp.task('default', ['sass']);
-
 gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
+  gulp.src('./www/scss/main.scss')
     .pipe(sass())
     .on('error', sass.logError)
     .pipe(gulp.dest('./www/css/'))
@@ -24,4 +24,17 @@ gulp.task('sass', function(done) {
 
 gulp.task('watch', ['sass'], function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.main, ['sass']);
 });
+
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./www/"
+    }
+  });
+});
+
+gulp.task('default', ['sass', 'watch', 'serve']);
+
+
