@@ -1,0 +1,164 @@
+.icon-star-menu{
+  background-image: url("../img/icon-star.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 36px;
+  background-position-y: 8px;
+}
+.icon-mode{
+  background-image: url("../img/icon-mode.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 36px;
+  background-position-y: 8px;
+  background-position-x: -1px;
+}
+.icon-shape{
+  background-image: url("../img/icon-shape.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 70px;
+  height: 70px;
+  background-position: center;
+}
+.icon-help{
+  background-image: url("../img/icon-help.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 35px;
+  background-position-y: 8px;
+}
+.icon-wench{
+  background-image: url("../img/icon-wench.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 35px;
+  background-position-y: 8px;
+}
+.icon-log-history{
+  background-image: url("../img/icon-menu-list.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 35px;
+  background-position-y: 8px;
+}
+.icon-menu-setting{
+  background-image: url("../img/icon-menu-setting.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 35px;
+  background-position-y: 8px;
+}
+.icon-bluetoot-2{
+  background-image: url("../img/icon-bluetoot.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+.icon-duty{
+  background-image: url("../img/icon-duty.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 21px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 10px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+.icon-daily-log{
+  background-image: url("../img/icon-daily-log.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+.icon-truck-custom{
+  background-image: url("../img/icon-truck.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 34px;
+  height: 35px;
+  display: inline-block;
+}
+.icon-building{
+  background-image: url("../img/icon-building.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 39px;
+  height: 36px;
+  display: inline-block;
+}
+.icon-shield-custom{
+  background-image: url("../img/icon-shield.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 20px;
+  height: 22px;
+  display: inline-block;
+  margin-right: 20px;
+  &:last-child{
+    padding-right: 0 !important;
+  }
+}
+.icon-lisence{
+  background-image: url("../img/icon-lisence.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 26px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 15px;
+}
+.icon-card{
+  background-image: url("../img/icon-card.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 45px;
+  height: 27px;
+  display: inline-block;
+}
+.icon-lighting{
+  background-image: url("../img/icon-lighting.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 45px;
+  height: 27px;
+  display: inline-block;
+}
+.icon-pair-eld{
+  background-image: url("../img/icon-pair-eld.png");
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  width: 45px;
+  height: 27px;
+  display: inline-block;
+}
+.icon-fixed-bottom{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 50px;
+}

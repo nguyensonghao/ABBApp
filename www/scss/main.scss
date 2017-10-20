@@ -1,0 +1,43 @@
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #fed014 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #1A1C21 !default;
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../bower_components/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "../lib/ionic/scss/ionic";
+
+//helper
+@import "helper/variables";
+@import "helper/mixin";
+//components
+@import "components/custom-class";
+@import "components/button";
+@import "components/form";
+@import "components/header";
+@import "components/icon";
+@import "components/platform";
+
+// page
+
+
+
+//media
+
+
+*{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+p{
+  margin: 0;
+}
