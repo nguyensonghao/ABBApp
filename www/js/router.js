@@ -1,4 +1,4 @@
-angular.module('AbbApp', ['ionic']).config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
@@ -11,7 +11,8 @@ angular.module('AbbApp', ['ionic']).config(function ($stateProvider, $urlRouterP
     })
     .state('sign-in', {
       url: '/sign-in',
-      templateUrl: 'pages/sign-in/sign-in.html'
+      templateUrl: 'pages/sign-in/sign-in.html',
+      controller: 'SignUpController'
     })
   $urlRouterProvider.otherwise('/sign-up');
 })

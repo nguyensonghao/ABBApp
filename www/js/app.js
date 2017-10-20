@@ -1,6 +1,5 @@
-var app = angular.module('AbbApp', ['ionic'])
-
-app.run(function($ionicPlatform) {
+var app = angular.module('AbbApp', ['ionic']);
+app.run(['$ionicPlatform', '$rootScope', function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -17,6 +16,11 @@ app.run(function($ionicPlatform) {
     }
   });
 
+  // Change constants message to rootScope
+  for (var key in MESSAGE) {
+    $rootScope[key] = MESSAGE[key];
+  }
+
   // Config firebase key
   firebase.initializeApp(FIREBASE_CONFIG);  
-})
+}])
