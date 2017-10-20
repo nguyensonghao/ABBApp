@@ -4,7 +4,7 @@
 
     </div>
     <div class="">
-      <form class="form-default" ng-submit="vm.register()" name="signUpForm" novalidate>
+      <form class="form-default" name="signUpForm" novalidate>
         <div class="list">
           <label class="item item-input input-field">
             <span class="icon">
@@ -20,15 +20,22 @@
             <span class="icon">
               <i class="icon-phone red"></i>
             </span>
-            <input type="text" placeholder="Số điện thoại" ng-model="vm.user.phone">
+            <input type="text" placeholder="Số điện thoại" ng-model="vm.user.phone" name="phone" required>
           </label>
+          <span class="error-validate" ng-show="signUpForm.phone.$dirty && signUpForm.phone.$invalid">
+            <span ng-show="signUpForm.phone.$error.required">{{PHONE_REQUIRED}}</span>
+          </span>
 
           <label class="item item-input input-field">
             <span class="icon">
               <i class="icon-key red"></i>
             </span>
-            <input type="password" placeholder="Mật khẩu" ng-model="vm.user.password">
+            <input type="password" placeholder="Mật khẩu" ng-model="vm.user.password" name="password" ng-minlength="6" ng-maxlength="32" required>
           </label>
+          <span class="error-validate" ng-show="signUpForm.password.$dirty && signUpForm.password.$invalid">
+            <span ng-show="signUpForm.password.$error.minlength">{{PASSWORD_MIN}}</span>
+            <span ng-show="signUpForm.password.$error.maxlength">{{PASSWORD_MAX}}</span>
+          </span>
 
           <label class="item item-input input-field">
             <span class="icon">
@@ -36,8 +43,14 @@
             </span>
             <input type="password" placeholder="Nhập lại mật khẩu" ng-model="vm.user.passwordConfirm">
           </label>
+          <span class="error-validate" ng-show="!vm.isPasswordEqual(vm.user.password, vm.user.passwordConfirm)">
+            {{PASSWORD_CONFIRM_NOT_MATCH}}
+          </span>
         </div>
-        <button type="submit" class="button button-block button-assertive">Đăng ký</button>
+        <button type="submit" class="button button-block button-assertive" ng-click="vm.register()"
+          ng-disabled="signUpForm.$invalid || !vm.isPasswordEqual(vm.user.password, vm.user.passwordConfirm)">
+          Đăng ký
+        </button>
       </form>
     </div>
   </ion-content>

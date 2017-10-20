@@ -1,5 +1,4 @@
-var app = angular.module('AbbApp', ['ionic']);
-app.run(['$ionicPlatform', '$rootScope', function($ionicPlatform, $rootScope) {
+app.run(['$ionicPlatform', '$rootScope', '$state', 'LocalStorageService', function($ionicPlatform, $rootScope, $state, LocalStorageService) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -22,5 +21,6 @@ app.run(['$ionicPlatform', '$rootScope', function($ionicPlatform, $rootScope) {
   }
 
   // Config firebase key
-  firebase.initializeApp(FIREBASE_CONFIG);  
+  firebase.initializeApp(FIREBASE_CONFIG);
+  $rootScope.CurrentUser = LocalStorageService.getItem('currentUser');
 }])

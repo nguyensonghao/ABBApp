@@ -1,14 +1,41 @@
-angular.module('AbbApp').service('AuthService', ['$q', function ($q) {
+app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
     var service = {};
-    service.login = function (user) {
+    var _ref = firebase.database().ref();
 
+    service.login = function (account) {
+        var deferred = $q.defer();
+        UtilService.showLoading();
+        var email = account.phone + "@gmail.com";
+        var credential = firebase.auth.EmailAuthProvider.credential(email, account.password);
+        firebase.auth().signInWithCredential(credential).then(function(user) {
+            UtilService.hideLoading();
+            deferred.resolve(user);
+        }).catch(function (error) {
+            console.log(error);
+            UtilService.hideLoading();
+            UtilService.showAlert(error.message);
+            deferred.reject(error);
+        })
+
+        return deferred.promise;
     }
 
-    service.register = function (user) {
+    service.register = function (user) {        
         var deferred = $q.defer();
-        firebase.auth().createUserWithEmailAndPassword(user.email, user.password).then(function (data) {
-            deferred.resolve(data);
+        UtilService.showLoading();
+        var email = user.phone + "@gmail.com";
+        firebase.auth().createUserWithEmailAndPassword(email, user.password).then(function (data) {
+            _ref.child('users').set(user).then(function (user) {
+                UtilService.hideLoading();
+                deferred.resolve(data);
+            }).catch(function(error) {
+                UtilService.hideLoading();
+                UtilService.showAlert(error.message);
+                deferred.reject(error);
+            });
         }).catch(function(error) {
+            UtilService.hideLoading();
+            UtilService.showAlert(error.message);
             deferred.reject(error);
         });       
         

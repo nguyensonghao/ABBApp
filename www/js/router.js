@@ -1,3 +1,4 @@
+var app = angular.module('AbbApp', ['ionic']);
 app.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
@@ -7,12 +8,20 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('sign-up', {
       url: '/sign-up',
-      templateUrl: 'pages/sign-up/sign-up.html'
+      templateUrl: 'pages/signUp/signUp.html',
+      controller: 'SignUpController'
     })
     .state('sign-in', {
       url: '/sign-in',
-      templateUrl: 'pages/sign-in/sign-in.html',
-      controller: 'SignUpController'
+      templateUrl: 'pages/signIn/signIn.html',
+      controller: 'SignInController'
     })
-  $urlRouterProvider.otherwise('/sign-up');
+
+  // var user = JSON.parse(localStorage.getItem('currentUser'));
+  // if (user) {
+  //   $urlRouterProvider.otherwise('/home');
+  // } else {
+  //   $urlRouterProvider.otherwise('/sign-up');
+  // }
+  $urlRouterProvider.otherwise('/sign-in');
 })
