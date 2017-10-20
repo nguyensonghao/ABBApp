@@ -10,8 +10,6 @@ angular.module('AbbApp').controller('HomeController', ['$scope', 'UtilService', 
       password: '123456'
     }
     
-    AuthService.register(user).then(function (data) {
-      console.log(data);
-    })
+    AuthService.loginFacebook()
   }
 }])
