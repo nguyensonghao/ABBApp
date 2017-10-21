@@ -1,4 +1,4 @@
-<ion-view  view-title="Sign In" ng-controller="SignInController as vm">
+<ion-view hide-nav-bar="true" ng-controller="SignInController as vm">
   <ion-content class="padding-horizontal-10">
     <div class="logo">
 
@@ -12,9 +12,9 @@
             </span>
             <input type="text" placeholder="Số điện thoại" ng-model="vm.user.phone" name="phone" required>
           </label>
-          <span class="error-validate" ng-show="signInForm.phone.$dirty && signInForm.phone.$invalid">
+          <p class="error-validate" ng-show="signInForm.phone.$dirty && signInForm.phone.$invalid">
             <span ng-show="signInForm.phone.$error.required">{{PHONE_REQUIRED}}</span>
-          </span>
+          </p>
 
           <label class="item item-input input-field">
             <span class="icon">
@@ -23,13 +23,13 @@
             <input type="password" placeholder="Mật khẩu" ng-model="vm.user.password" name="password" 
               ng-minlength="6" ng-maxlength="32" required>
           </label>
-          <span class="error-validate" ng-show="signInForm.password.$dirty && signInForm.password.$invalid">
+          <p class="error-validate" ng-show="signInForm.password.$dirty && signInForm.password.$invalid">
             <span ng-show="signInForm.password.$error.minlength">{{PASSWORD_MIN}}</span>
             <span ng-show="signInForm.password.$error.maxlength">{{PASSWORD_MAX}}</span>
-          </span>
+          </p>
         </div>
         <div>
-          <p class="red text-center">Ghi nhớ đăng nhập</p>
+          <p class="red text-center"><span class="circle"></span><span class="text-underline">Ghi nhớ đăng nhập</span></p>
         </div>
         <button class="button button-block button-assertive button-around"
           type="submit" ng-click="vm.login()"

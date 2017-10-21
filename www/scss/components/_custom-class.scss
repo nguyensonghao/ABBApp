@@ -112,3 +112,11 @@
 .blue-bg{
   background-color: $blue;
 }
+.circle{
+  width: 15px;
+  height: 15px;
+  border: 1px solid $red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}

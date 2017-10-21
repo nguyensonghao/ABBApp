@@ -6,6 +6,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: 'pages/home/home.html',
       controller: 'HomeController'
     })
+    .state('home-page', {
+      url: '/home-page',
+      templateUrl: 'pages/newFeed/newFeed.html'
+    })
     .state('sign-up', {
       url: '/sign-up',
       templateUrl: 'pages/signUp/signUp.html',

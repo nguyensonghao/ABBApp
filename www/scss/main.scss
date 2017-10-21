@@ -1,7 +1,7 @@
 
 $light:                           #fff !default;
 $stable:                          #f8f8f8 !default;
-$positive:                        #387ef5 !default;
+$positive:                        #4267b2 !default;
 $calm:                            #11c1f3 !default;
 $balanced:                        #33cd5f !default;
 $energized:                       #fed014 !default;
@@ -25,10 +25,11 @@ $ionicons-font-path: "../bower_components/ionic/fonts" !default;
 @import "components/form";
 @import "components/header";
 @import "components/icon";
+@import "components/text";
 @import "components/platform";
 
 // page
-
+@import "pages/new-feed";
 
 
 //media

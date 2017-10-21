@@ -1,4 +1,4 @@
-<ion-view view-title="Sign Up" ng-controller="SignUpController as vm">
+<ion-view hide-nav-bar="true" ng-controller="SignUpController as vm">
   <ion-content class="padding-horizontal-10">
     <div class="logo">
 
@@ -12,9 +12,9 @@
             </span>
             <input type="text" placeholder="Họ và tên" ng-model="vm.user.username" name="username" required>
           </label>
-          <span class="error-validate" ng-show="signUpForm.username.$dirty && signUpForm.username.$invalid">
+          <p class="error-validate" ng-show="signUpForm.username.$dirty && signUpForm.username.$invalid">
             <span ng-show="signUpForm.username.$error.required">{{USERNAME_REQUIRED}}</span>
-          </span>
+          </p>
 
           <label class="item item-input input-field">
             <span class="icon">
@@ -22,9 +22,9 @@
             </span>
             <input type="text" placeholder="Số điện thoại" ng-model="vm.user.phone" name="phone" required>
           </label>
-          <span class="error-validate" ng-show="signUpForm.phone.$dirty && signUpForm.phone.$invalid">
+          <p class="error-validate" ng-show="signUpForm.phone.$dirty && signUpForm.phone.$invalid">
             <span ng-show="signUpForm.phone.$error.required">{{PHONE_REQUIRED}}</span>
-          </span>
+          </p>
 
           <label class="item item-input input-field">
             <span class="icon">
@@ -32,10 +32,10 @@
             </span>
             <input type="password" placeholder="Mật khẩu" ng-model="vm.user.password" name="password" ng-minlength="6" ng-maxlength="32" required>
           </label>
-          <span class="error-validate" ng-show="signUpForm.password.$dirty && signUpForm.password.$invalid">
+          <p class="error-validate" ng-show="signUpForm.password.$dirty && signUpForm.password.$invalid">
             <span ng-show="signUpForm.password.$error.minlength">{{PASSWORD_MIN}}</span>
             <span ng-show="signUpForm.password.$error.maxlength">{{PASSWORD_MAX}}</span>
-          </span>
+          </p>
 
           <label class="item item-input input-field">
             <span class="icon">
@@ -43,11 +43,11 @@
             </span>
             <input type="password" placeholder="Nhập lại mật khẩu" ng-model="vm.user.passwordConfirm">
           </label>
-          <span class="error-validate" ng-show="!vm.isPasswordEqual(vm.user.password, vm.user.passwordConfirm)">
+          <p class="error-validate" ng-show="!vm.isPasswordEqual(vm.user.password, vm.user.passwordConfirm)">
             {{PASSWORD_CONFIRM_NOT_MATCH}}
-          </span>
+          </p>
         </div>
-        <button type="submit" class="button button-block button-assertive" ng-click="vm.register()"
+        <button type="submit" class="button button-block button-assertive button-around" ng-click="vm.register()"
           ng-disabled="signUpForm.$invalid || !vm.isPasswordEqual(vm.user.password, vm.user.passwordConfirm)">
           Đăng ký
         </button>

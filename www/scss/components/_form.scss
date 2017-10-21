@@ -4,6 +4,16 @@
   border: none;
   border-bottom: 1px solid $gray;
   margin-bottom: 1px;
+  margin-top: 20px;
+  input{
+    font-size: 18px;
+    &:-moz-placeholder{
+      color: $gray;
+    }
+    &::-webkit-input-placeholder{
+      color: $gray;
+    }
+  }
   .icon{
     left: 10px;
     @include position-center-vertical;
