@@ -10,6 +10,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       url: '/home-page',
       templateUrl: 'pages/newFeed/newFeed.html'
     })
+    .state('event-detail', {
+      url: '/event-detail',
+      templateUrl: 'pages/eventDetail/eventDetail.html',
+    })
     .state('sign-up', {
       url: '/sign-up',
       templateUrl: 'pages/signUp/signUp.html',
@@ -27,5 +31,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
   // } else {
   //   $urlRouterProvider.otherwise('/sign-up');
   // }
-  $urlRouterProvider.otherwise('/sign-in');
+  $urlRouterProvider.otherwise('/home-page');
 })
