@@ -8,7 +8,7 @@ app.service('UtilService', ['$ionicLoading', '$ionicPopup', function ($ionicLoad
         $ionicLoading.hide();
     }
 
-    service.showAlert = function (title = "Thông báo", message) {
+    service.showAlert = function (title, message) {
         $ionicPopup.alert({
             title: title,
             template: message

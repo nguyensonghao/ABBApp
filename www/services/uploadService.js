@@ -17,7 +17,7 @@ app.service('UploadService', ['$q', function ($q) {
 
     service.urlToBlob = function (fileUrl, callback) {
         window.resolveLocalFileSystemURL(fileUrl, function (fileEntry) {
-            fileEntry.file((resFile) => {
+            fileEntry.file(function (resFile) {
                 var reader = new FileReader();
                 reader.onloadend = function (evt) {
                     var imgBlob = new Blob([evt.target.result], { type: 'image/jpeg' });

@@ -11,7 +11,6 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
             UtilService.hideLoading();
             deferred.resolve(user);
         }).catch(function (error) {
-            console.log(error);
             UtilService.hideLoading();
             UtilService.showAlert(error.message);
             deferred.reject(error);
