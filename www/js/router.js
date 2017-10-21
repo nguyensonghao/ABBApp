@@ -12,12 +12,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('event-detail', {
       url: '/event-detail',
-      templateUrl: 'pages/eventDetail/eventDetail.html',
+      templateUrl: 'pages/eventDetail/eventDetail.html'
     })
     .state('sign-up', {
       url: '/sign-up',
       templateUrl: 'pages/signUp/signUp.html',
       controller: 'SignUpController'
+    })
+    .state('forgot-pass', {
+      url: '/forgot',
+      templateUrl: 'pages/forgotPass/forgotPass.html'
     })
     .state('sign-in', {
       url: '/sign-in',
