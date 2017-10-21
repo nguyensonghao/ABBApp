@@ -1,33 +1,17 @@
-<ion-view>
+<ion-view ng-controller="NewFeedController as vm">
   <ion-nav-bar class="bar-assertive" align-title="center">
     <ion-nav-title>SỰ KIỆN</ion-nav-title>
   </ion-nav-bar>
   <ion-content padding="true" class="new-feed">
     <div class="new-feed_list">
-      <div class="new-feed_item">
-        <p class="item_date">15 Tháng 10</p>
-        <p class="item_day">Thứ 4</p>
+      <div class="new-feed_item" ng-repeat="post in vm.posts" ui-sref="event-detail({id: post.id})">
+        <p class="item_date">{{vm.getDate(post.time)}}</p>
+        <p class="item_day">{{vm.getDay(post.time)}}</p>
         <div class="item_content">
-          <p class="item_title">Decorate For Less With Art Posters</p>
-          <img src="img/feed-1.jpg"/>
+          <p class="item_title">{{post.title}}</p>
+          <img src="{{post.img}}"/>
         </div>
-      </div>
-      <div class="new-feed_item">
-        <p class="item_date">15 Tháng 10</p>
-        <p class="item_day">Thứ 4</p>
-        <div class="item_content">
-          <p class="item_title">Decorate For Less With Art Posters</p>
-          <img src="img/feed-2.jpg"/>
-        </div>
-      </div>
-      <div class="new-feed_item">
-        <p class="item_date">15 Tháng 10</p>
-        <p class="item_day">Thứ 4</p>
-        <div class="item_content">
-          <p class="item_title">Decorate For Less With Art Posters</p>
-          <img src="img/feed-1.jpg"/>
-        </div>
-      </div>
+      </div>      
     </div>
   </ion-content>
 </ion-view>

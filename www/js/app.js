@@ -13,18 +13,6 @@ app.run(['$ionicPlatform', '$rootScope', '$state', 'LocalStorageService', functi
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-
-    FCMPlugin.getToken(function(token){
-        alert(token);
-    });
-
-    FCMPlugin.onNotification(function(data) {
-        if (data.wasTapped) {
-          alert( JSON.stringify(data) );
-        } else {
-          alert( JSON.stringify(data) );
-        }
-    });
   });
 
   // Change constants message to rootScope

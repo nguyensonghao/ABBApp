@@ -18,7 +18,31 @@ app.service('DataService', ['$q', function ($q) {
     service.all = function (collection) {
         var deferred = $q.defer();
         _ref.child(collection).on("value", function(list) {
-            deferred.resolve(list);
+            list = list.val();
+            var result = [];
+            for (var key in list) {
+                list[key]['id'] = key;
+                result.push(list[key]);
+            }
+            deferred.resolve(result);
+        });
+
+        return deferred.promise;
+    }
+
+    service.findById = function (collection, id) {
+        var deferred = $q.defer();
+        _ref.child(collection).orderByKey().equalTo(id).once("value", function(item) {
+            item = item.val();
+            if (item) {
+                for (var key in item) {
+                    item[key][id] = key;
+                    deferred.resolve(item[key]);
+                    break;    
+                }
+            } else {
+                deferred.resolve(null);
+            }
         });
 
         return deferred.promise;
