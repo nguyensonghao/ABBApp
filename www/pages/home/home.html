@@ -2,16 +2,50 @@
   <ion-nav-bar class="bar-assertive" align-title="center">
     <ion-nav-title>SỰ KIỆN</ion-nav-title>
   </ion-nav-bar>
-  <ion-content class="padding">
-      <div class="row">
-        <div class="col" ng-repeat="count in vm.countDownTime">
-          <div class="time">
-            <p>{{count.time}}</p>
-            <p>{{count.title}}</p>
-          </div>
+  <ion-content class="padding home-page" scroll="false">
+      <!--<div class="row">-->
+        <!--<div class="col col-25" ng-repeat="count in vm.countDownTime">-->
+          <!--<div class="time">-->
+            <!--<p>{{count.time}}</p>-->
+            <!--<p>{{count.title}}</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <div class="row">
+      <div class="col-25 pd-horizontal-3">
+        <div class="time">
+          <p class="time_number">20</p>
+          <p class="time_title">Ngày</p>
         </div>
       </div>
-      <button ui-sref="new-feed">Sự kiện</button>
-      <button>Bình chọn</button>
+      <div class="col-25 pd-horizontal-3">
+        <div class="time">
+          <p class="time_number">20</p>
+          <p class="time_title">Ngày</p>
+        </div>
+      </div>
+      <div class="col-25 pd-horizontal-3">
+        <div class="time">
+          <p class="time_number">20</p>
+          <p class="time_title">Ngày</p>
+        </div>
+      </div>
+      <div class="col-25 pd-horizontal-3">
+        <div class="time">
+          <p class="time_number">20</p>
+          <p class="time_title">Ngày</p>
+        </div>
+      </div>
+    </div>
+    <div class="action">
+      <div class="action-item" ui-sref="new-feed">
+        <button class="button-circle"><i class="icon-diamond"></i></button>
+        <p>Sự kiện</p>
+      </div>
+      <div class="action-item">
+        <button class="button-circle"><i class="icon-badge"></i></button>
+        <p>Bình chọn</p>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

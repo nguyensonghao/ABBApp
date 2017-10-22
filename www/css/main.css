@@ -9830,6 +9830,10 @@ a.button {
   padding-left: 10%;
   padding-right: 10%; }
 
+.pd-horizontal-3 {
+  padding-right: 3px;
+  padding-left: 3px; }
+
 .padding-vertical {
   padding: 12px 6px !important; }
 
@@ -9865,7 +9869,7 @@ a.button {
   justify-content: center;
   align-items: center; }
 
-.flex-row-space {
+.flex-row-around, .home-page .action {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -9874,7 +9878,7 @@ a.button {
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center; }
 
 .flex-row-align-center {
@@ -9924,6 +9928,15 @@ a.button {
   border-radius: 30px;
   font-size: 20px;
   font-weight: 600; }
+
+.button-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 22px; }
 
 .input-field {
   position: relative;
@@ -10171,6 +10184,31 @@ a.button {
     width: 100%;
     height: 100%;
     object-fit: cover; }
+
+.home-page .time {
+  border-radius: 7px;
+  box-shadow: 2px 0px 13px 1px #dedddd;
+  height: 150px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative; }
+  .home-page .time .time_number {
+    color: #e74c3c;
+    font-size: 50px;
+    margin-bottom: 10px; }
+  .home-page .time .time_title {
+    position: absolute;
+    bottom: 20px; }
+
+.home-page .action {
+  position: absolute;
+  width: 100%;
+  bottom: 10%; }
+  .home-page .action .action-item {
+    text-align: center; }
 
 * {
   font-family: 'Open Sans', sans-serif;

@@ -1,0 +1,31 @@
+.home-page{
+  .time{
+    border-radius: 7px;
+    box-shadow: 2px 0px 13px 1px #dedddd;
+    height: 150px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    .time_number{
+      color: $red;
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    .time_title{
+      position: absolute;
+      bottom: 20px;
+    }
+  }
+  .action{
+    @extend .flex-row-around;
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    .action-item{
+      text-align: center;
+    }
+  }
+}

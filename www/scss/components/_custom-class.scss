@@ -30,6 +30,10 @@
   padding-left: 10%;
   padding-right: 10%;
 }
+.pd-horizontal-3{
+  padding-right: 3px;
+  padding-left: 3px;
+}
 .padding-vertical{
   padding: 12px 6px !important;
 }
@@ -65,7 +69,7 @@
   justify-content: center;
   align-items: center;
 }
-.flex-row-space{
+.flex-row-around{
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -74,7 +78,7 @@
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .flex-row-align-center{
