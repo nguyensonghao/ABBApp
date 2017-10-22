@@ -1,9 +1,13 @@
-<ion-view hide-nav-bar="true" ng-controller="SignUpController as vm">
+<ion-view ng-controller="SignUpController as vm">
+  <ion-nav-bar class="bar-assertive" align-title="center">
+    <ion-nav-back-button>Back</ion-nav-back-button>
+    <ion-nav-title>ĐĂNG KÝ</ion-nav-title>
+  </ion-nav-bar>
   <ion-content class="padding-horizontal-10">
-    <div class="logo">
-
-    </div>
     <div class="">
+      <div class="logo-container center">
+        <img src="img/logo.png" class="logo">
+      </div>
       <form class="form-default" name="signUpForm" novalidate>
         <div class="list">
           <label class="item item-input input-field">
@@ -20,10 +24,21 @@
             <span class="icon">
               <i class="icon-phone red"></i>
             </span>
-            <input type="text" placeholder="Số điện thoại" ng-model="vm.user.phone" name="phone" required>
+            <input type="tel" placeholder="Số điện thoại" ng-model="vm.user.phone" name="phone" required>
           </label>
           <p class="error-validate" ng-show="signUpForm.phone.$dirty && signUpForm.phone.$invalid">
             <span ng-show="signUpForm.phone.$error.required">{{PHONE_REQUIRED}}</span>
+          </p>
+
+          <label class="item item-input input-field">
+            <span class="icon">
+              <i class="ion-at red"></i>
+            </span>
+            <input type="email" placeholder="Email" ng-model="vm.user.email" name="email" required>
+          </label>
+          <p class="error-validate" ng-show="signUpForm.email.$dirty && signUpForm.email.$invalid">
+            <span ng-show="signUpForm.email.$error.required">{{EMAIL_REQUIRED}}</span>
+            <span ng-show="signUpForm.email.$error.email">{{EMAIL_FORMAT}}</span>
           </p>
 
           <label class="item item-input input-field">

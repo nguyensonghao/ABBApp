@@ -36,7 +36,7 @@ app.service('DataService', ['$q', function ($q) {
             item = item.val();
             if (item) {
                 for (var key in item) {
-                    item[key][id] = key;
+                    item[key].id = key;
                     deferred.resolve(item[key]);
                     break;    
                 }
@@ -45,6 +45,16 @@ app.service('DataService', ['$q', function ($q) {
             }
         });
 
+        return deferred.promise;
+    }
+
+    service.update = function (collection, value) {
+        var deferred = $q.defer();
+        _ref.child(collection + '/' + value.id).update(value, function (data) {
+            deferred.resolve(true);
+        }).catch(function (err) {
+            deferred.resolve(false);
+        })
         return deferred.promise;
     }
 

@@ -4,9 +4,13 @@ function ($scope, AuthService, $rootScope, $state, UtilService, LocalStorageServ
     vm.user = {};
 
     vm.register = function () {
+        UtilService.showLoading();
         AuthService.register(vm.user).then(function (data) {
-            LocalStorageService.setItem('currentUser', data);
+            var currentUser = AuthService.getCurrentUser(firebase.auth().currentUser);
+            LocalStorageService.setItem('currentUser', currentUser);
+            $rootScope.CurrentUser = currentUser;
             $state.go('home');
+            UtilService.hideLoading();
         })
     }
 

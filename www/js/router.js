@@ -25,12 +25,19 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       url: '/sign-in',
       templateUrl: 'pages/signIn/signIn.html',
     })
+    .state('vote', {
+      url: '/vote',
+      templateUrl: 'pages/vote/vote.html',
+    })
+    .state('vote-detail', {
+      url: '/vote-detail/:id',
+      templateUrl: 'pages/voteDetail/voteDetail.html',
+    })
 
-  // var user = JSON.parse(localStorage.getItem('currentUser'));
-  // if (user) {
-  //   $urlRouterProvider.otherwise('/home');
-  // } else {
-  //   $urlRouterProvider.otherwise('/sign-up');
-  // }
-  $urlRouterProvider.otherwise('/home');
+  var user = JSON.parse(localStorage.getItem('currentUser'));
+  if (user) {
+    $urlRouterProvider.otherwise('/home');
+  } else {
+    $urlRouterProvider.otherwise('/sign-in');
+  }
 })

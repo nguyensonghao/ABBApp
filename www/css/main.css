@@ -9921,6 +9921,9 @@ a.button {
   display: inline-block;
   margin-right: 8px; }
 
+.center {
+  text-align: center; }
+
 .btn-black {
   background: black; }
 
@@ -10125,7 +10128,8 @@ a.button {
 
 .error-validate {
   color: #e74c3c;
-  margin: 7px 0; }
+  margin: 7px 0;
+  font-size: 14px; }
 
 .text-underline {
   text-decoration: underline; }

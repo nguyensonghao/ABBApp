@@ -1,18 +1,19 @@
-<ion-view ng-controller="EventDetailController as vm">
+<ion-view ng-controller="VoteDetailController as vm">
   <ion-nav-bar class="bar-assertive" align-title="center">
     <ion-nav-back-button>Back</ion-nav-back-button>
-    <ion-nav-title>SỰ KIỆN</ion-nav-title>
+    <ion-nav-title>TIẾT MỤC</ion-nav-title>
   </ion-nav-bar>
   <ion-content class="event-detail">
     <div class="event-banner">
-      <p class="event-title">{{post.title}}</p>
+      <p class="event-title">{{vm.vote.title}}</p>
       <span class="icon ion-close"></span>
-      <img src="{{vm.post.img}}"/>
+      <img src="{{vm.vote.img}}"/>
     </div>
     <div class="event-content">
       <p class="padding">
-        {{vm.post.content}}
+        {{vm.vote.content}}
       </p>
     </div>
+    <button ng-click="vm.voteItem()">Bình chọn</button>
   </ion-content>
 </ion-view>

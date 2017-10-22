@@ -4,7 +4,7 @@ app.controller('NewFeedController', ['DataService', 'UtilService', function (Dat
     
     var loadData = function () {
         UtilService.showLoading();
-        DataService.all('posts').then(function (data) {
+        DataService.all('articles').then(function (data) {
             UtilService.hideLoading();
             vm.posts = data;
         })

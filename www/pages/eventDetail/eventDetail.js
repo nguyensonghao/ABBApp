@@ -3,7 +3,7 @@ app.controller('EventDetailController', ['$stateParams', 'DataService', 'UtilSer
 
     var loadData = function () {
         UtilService.showLoading();
-        DataService.findById('posts', $stateParams.id).then(function (value) {
+        DataService.findById('articles', $stateParams.id).then(function (value) {
             vm.post = value;
             UtilService.hideLoading();
         })

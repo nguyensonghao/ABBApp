@@ -1,0 +1,23 @@
+<ion-view ng-controller="VoteController as vm">
+  <ion-nav-bar class="bar-assertive" align-title="center">
+    <ion-nav-back-button>Back</ion-nav-back-button>
+    <ion-nav-title>BÌNH CHỌN</ion-nav-title>
+  </ion-nav-bar>
+  <ion-content padding="true" class="new-feed">
+  <h1>Các tiết mục</h1>
+    <div class="new-feed_list">
+      <div class="new-feed_item" ng-repeat="vote in vm.votes | orderBy : '-num'" ng-click="vm.detail(vote)">
+        <div class="item_content">
+          <p class="item_title">{{vote.title}}</p>
+          <img src="{{vote.img}}"/>
+          <div style="position: absolute; z-index: 100000; color: white; top: 50px;">
+            <p class="item_vote" style="color: red">{{vote.num}}</p>
+            <button ng-click="vm.voteItem(vote, $event)">
+              Bình chọn
+            </button>
+          </div>
+        </div>
+      </div>      
+    </div>
+  </ion-content>
+</ion-view>
