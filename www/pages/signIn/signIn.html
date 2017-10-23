@@ -1,5 +1,5 @@
 <ion-view hide-nav-bar="true" ng-controller="SignInController as vm">
-  <ion-content class="padding-horizontal-10">
+  <ion-content class="padding-horizontal-10 sign-page">
     <div class="">
       <div class="logo-container center">
         <img src="img/logo.png" class="logo">
@@ -41,16 +41,16 @@
           Đăng nhập
         </button>
         <div>
-          <p class="red text-center text-underline" ui-sref="forgot-pass">Bạn quên mật khẩu</p>
+          <p class="red text-center text-underline" ui-sref="forgot-pass">Bạn quên mật khẩu?</p>
         </div>
         <button class="button button-block button-positive button-around" ng-click="vm.loginFacebook()">
           Đăng nhập qua Facebook
         </button>
-
-        <div>
-          <p class="red text-center" ui-sref="sign-up">
-            <span class="text-underline">Tạo tài khoản mới</span>
+        <div class="login-footer">
+          <p class="red" ui-sref="sign-up">
+            <span class="text-underline">Bạn chưa là thành viên?</span>
           </p>
+          <button ui-sref="sign-up" class="button button-around button-outline-clear">Đăng ký</button>
         </div>
       </form>
     </div>

@@ -1,3 +1,29 @@
+.bar{
+  background-size: 100% 0;
+}
 .bar-header{
 
+}
+.bar-subheader{
+  border-bottom: none;
+  box-shadow: none;
+  background-image: none;
+  padding: 0;
+  .button{
+    color: $red;
+    width: 50%;
+    border: 1px solid $red;
+    background: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 0;
+    &:last-child{
+      position: initial !important;
+      border-left: none;
+    }
+    &.active{
+      background: $red;
+      color: #ffffff;
+    }
+  }
 }

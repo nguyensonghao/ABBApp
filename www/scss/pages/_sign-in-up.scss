@@ -1,0 +1,20 @@
+.logo-container{
+  margin-top: 15%;
+  margin-bottom: 10%;
+  .logo{
+    width: 130px;
+    margin: auto;
+  }
+}
+
+.sign-page{
+  .login-footer{
+    margin: 30% -8% 0 -8%;
+    @extend .flex-row-between;
+    .button{
+      min-width: initial;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}

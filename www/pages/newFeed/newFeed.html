@@ -3,7 +3,12 @@
     <ion-nav-back-button>Back</ion-nav-back-button>
     <ion-nav-title>SỰ KIỆN</ion-nav-title>
   </ion-nav-bar>
-  <ion-content padding="true" class="new-feed">
+  <div class="bar bar-subheader">
+    <button class='button active'>Sự kiện</button>
+    <button class='button'>Bình chọn</button>
+  </div>
+  <ion-content padding="true" class="new-feed has-header has-subheader">
+
     <div class="new-feed_list">
       <div class="new-feed_item" ng-repeat="post in vm.posts" ui-sref="event-detail({id: post.id})">
         <p class="item_date">{{vm.getDate(post.time)}}</p>

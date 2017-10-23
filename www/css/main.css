@@ -9809,6 +9809,21 @@ a.button {
       -ms-flex-align: center;
           align-items: center; }
 
+.flex-row-between, .sign-page .login-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 .flex-row-align-center {
   display: -webkit-box;
   display: -moz-flex;
@@ -9877,6 +9892,11 @@ a.button {
   background-color: #ffffff;
   color: #EA2227; }
 
+.button-outline-clear {
+  background: #ffffff;
+  border-color: #EA2227;
+  color: #EA2227; }
+
 .input-field {
   position: relative;
   padding-left: 40px;
@@ -9899,6 +9919,30 @@ a.button {
     .input-field .icon i {
       font-size: 20px;
       font-weight: bold; }
+
+.bar {
+  background-size: 100% 0; }
+
+.bar-subheader {
+  border-bottom: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-image: none;
+  padding: 0; }
+  .bar-subheader .button {
+    color: #EA2227;
+    width: 50%;
+    border: 1px solid #EA2227;
+    background: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 0; }
+    .bar-subheader .button:last-child {
+      position: initial !important;
+      border-left: none; }
+    .bar-subheader .button.active {
+      background: #EA2227;
+      color: #ffffff; }
 
 .icon-star-menu {
   background-image: url("../img/icon-star.png");
@@ -10151,6 +10195,9 @@ a.button {
     -o-object-fit: cover;
        object-fit: cover; }
 
+.home-page .logo-container {
+  margin-top: 30%; }
+
 .home-page .time {
   background: #FFFFFF;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -10189,6 +10236,22 @@ a.button {
   bottom: 10%; }
   .home-page .action .action-item {
     text-align: center; }
+  .home-page .action p {
+    margin-top: 10px; }
+
+.logo-container {
+  margin-top: 15%;
+  margin-bottom: 10%; }
+  .logo-container .logo {
+    width: 130px;
+    margin: auto; }
+
+.sign-page .login-footer {
+  margin: 30% -8% 0 -8%; }
+  .sign-page .login-footer .button {
+    min-width: initial;
+    padding-left: 30px;
+    padding-right: 30px; }
 
 * {
   font-family: 'Open Sans', sans-serif;
