@@ -9,7 +9,9 @@
         <p class="item_date">{{vm.getDate(post.time)}}</p>
         <p class="item_day">{{vm.getDay(post.time)}}</p>
         <div class="item_content">
-          <p class="item_title">{{post.title}}</p>
+          <div class="item_header">
+            <p class="item_title">{{post.title}}</p>
+          </div>
           <img src="{{post.img}}"/>
         </div>
       </div>      

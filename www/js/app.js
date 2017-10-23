@@ -14,7 +14,6 @@ app.run(['$ionicPlatform', '$rootScope', '$state', 'LocalStorageService', functi
       StatusBar.styleDefault();
     }
   });
-
   // Change constants message to rootScope
   for (var key in MESSAGE) {
     $rootScope[key] = MESSAGE[key];

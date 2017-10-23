@@ -1,5 +1,5 @@
 var app = angular.module('AbbApp', ['ionic']);
-app.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
@@ -7,7 +7,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('new-feed', {
       url: '/new-feed',
-      templateUrl: 'pages/newFeed/newFeed.html',
+      templateUrl: 'pages/newFeed/newFeed.html'
     })
     .state('event-detail', {
       url: '/event-detail/:id',
@@ -15,7 +15,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('sign-up', {
       url: '/sign-up',
-      templateUrl: 'pages/signUp/signUp.html',
+      templateUrl: 'pages/signUp/signUp.html'
     })
     .state('forgot-pass', {
       url: '/forgot-pass',
@@ -23,15 +23,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('sign-in', {
       url: '/sign-in',
-      templateUrl: 'pages/signIn/signIn.html',
+      templateUrl: 'pages/signIn/signIn.html'
     })
     .state('vote', {
       url: '/vote',
-      templateUrl: 'pages/vote/vote.html',
+      templateUrl: 'pages/vote/vote.html'
     })
     .state('vote-detail', {
       url: '/vote-detail/:id',
-      templateUrl: 'pages/voteDetail/voteDetail.html',
+      templateUrl: 'pages/voteDetail/voteDetail.html'
     })
 
   var user = JSON.parse(localStorage.getItem('currentUser'));
@@ -40,4 +40,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
   } else {
     $urlRouterProvider.otherwise('/sign-in');
   }
+
+  $ionicConfigProvider.backButton.text('').icon('icon ion-ios-arrow-back');
 })

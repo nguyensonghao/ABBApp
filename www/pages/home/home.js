@@ -6,9 +6,9 @@ angular.module('AbbApp').controller('HomeController', ['$interval', 'UtilService
 
   var loadData = function () {
     countDownTime();
-    $interval(function () {
-      countDownTime();
-    }, 1000);
+    // $interval(function () {
+    //   countDownTime();
+    // }, 1000);
   }
 
   var countDownTime = function () {

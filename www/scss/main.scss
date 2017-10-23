@@ -5,7 +5,7 @@ $positive:                        #4267b2 !default;
 $calm:                            #11c1f3 !default;
 $balanced:                        #33cd5f !default;
 $energized:                       #fed014 !default;
-$assertive:                       #ef473a !default;
+$assertive:                       #EA2227 !default;
 $royal:                           #886aea !default;
 $dark:                            #1A1C21 !default;
 
@@ -27,6 +27,7 @@ $ionicons-font-path: "../bower_components/ionic/fonts" !default;
 @import "components/icon";
 @import "components/text";
 @import "components/platform";
+@import "components/footer";
 
 // page
 @import "pages/new-feed";
@@ -42,4 +43,7 @@ $ionicons-font-path: "../bower_components/ionic/fonts" !default;
 }
 p{
   margin: 0;
+}
+.has-footer{
+  bottom: 80px;
 }

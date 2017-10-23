@@ -1,7 +1,8 @@
 .home-page{
   .time{
-    border-radius: 7px;
-    box-shadow: 2px 0px 13px 1px #dedddd;
+    background: #FFFFFF;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+    border-radius: 8px;
     height: 150px;
     text-align: center;
     display: flex;
@@ -15,8 +16,8 @@
       margin-bottom: 10px;
     }
     .time_title{
-      position: absolute;
       bottom: 20px;
+      @include position-center-horizontal;
     }
   }
   .action{

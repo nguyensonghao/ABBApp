@@ -1,0 +1,14 @@
+.bar-footer{
+  border-top: none;
+  box-shadow: none;
+  background: none;
+  justify-content: center;
+  align-items: flex-start;
+  height: 80px;
+  .button{
+    min-width: 80%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
