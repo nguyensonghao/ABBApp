@@ -1,0 +1,25 @@
+<ion-view ng-controller="NewFeedController as vm">
+  <ion-nav-bar class="bar-assertive" align-title="center">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-title>SỰ KIỆN</ion-nav-title>
+  </ion-nav-bar>
+  <div class="bar bar-subheader">
+    <button class='button active'>Sự kiện</button>
+    <button class='button'>Bình chọn</button>
+  </div>
+  <ion-content padding="true" class="new-feed has-header has-subheader">
+
+    <div class="new-feed_list">
+      <div class="new-feed_item" ng-repeat="post in vm.posts" ui-sref="event-detail({id: post.id})">
+        <p class="item_date">{{vm.getDate(post.time)}}</p>
+        <p class="item_day">{{vm.getDay(post.time)}}</p>
+        <div class="item_content">
+          <div class="item_header">
+            <p class="item_title">{{post.title}}</p>
+          </div>
+          <img src="{{post.img}}"/>
+        </div>
+      </div>      
+    </div>
+  </ion-content>
+</ion-view>

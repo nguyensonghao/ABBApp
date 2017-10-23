@@ -1,0 +1,18 @@
+<ion-view ng-controller="EventDetailController as vm">
+  <ion-nav-bar class="bar-assertive" align-title="center">
+    <ion-nav-back-button>Back</ion-nav-back-button>
+    <ion-nav-title>SỰ KIỆN</ion-nav-title>
+  </ion-nav-bar>
+  <ion-content class="event-detail">
+    <div class="event-banner">
+      <p class="event-title">{{post.title}}</p>
+      <span class="icon ion-close"></span>
+      <img src="{{vm.post.img}}"/>
+    </div>
+    <div class="event-content">
+      <p class="padding">
+        {{vm.post.content}}
+      </p>
+    </div>
+  </ion-content>
+</ion-view>

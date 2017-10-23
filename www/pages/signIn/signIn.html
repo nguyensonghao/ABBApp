@@ -1,0 +1,58 @@
+<ion-view hide-nav-bar="true" ng-controller="SignInController as vm">
+  <ion-content class="padding-horizontal-10 sign-page">
+    <div class="">
+      <div class="logo-container center">
+        <img src="img/logo.png" class="logo">
+      </div>
+      <form class="form-default" name="signInForm">
+        <div class="list">
+          <label class="item item-input input-field">
+            <span class="icon">
+              <i class="icon-phone red"></i>
+            </span>
+            <input type="email" placeholder="Email" ng-model="vm.user.email" name="email" required>
+          </label>
+          <p class="error-validate" ng-show="signInForm.email.$dirty && signInForm.email.$invalid">
+            <span ng-show="signInForm.email.$error.required">{{EMAIL_REQUIRED}}</span>
+            <span ng-show="signInForm.email.$error.email">{{EMAIL_FORMAT}</span>
+          </p>
+
+          <label class="item item-input input-field">
+            <span class="icon">
+              <i class="icon-key red"></i>
+            </span>
+            <input type="password" placeholder="Mật khẩu" ng-model="vm.user.password" name="password" 
+              ng-minlength="6" ng-maxlength="32" required>
+          </label>
+          <p class="error-validate" ng-show="signInForm.password.$dirty && signInForm.password.$invalid">
+            <span ng-show="signInForm.password.$error.minlength">{{PASSWORD_MIN}}</span>
+            <span ng-show="signInForm.password.$error.maxlength">{{PASSWORD_MAX}}</span>
+          </p>
+        </div>
+        <div>
+          <p class="red text-center" ng-click="vm.saveSession()">
+            <span class="circle" ng-class="vm.classSaveSession()"></span>
+            <span class="text-underline">Ghi nhớ đăng nhập</span>
+          </p>
+        </div>
+        <button class="button button-block button-assertive button-around"
+          type="submit" ng-click="vm.login()"
+          ng-disabled="signInForm.$invalid">
+          Đăng nhập
+        </button>
+        <div>
+          <p class="red text-center text-underline" ui-sref="forgot-pass">Bạn quên mật khẩu?</p>
+        </div>
+        <button class="button button-block button-positive button-around" ng-click="vm.loginFacebook()">
+          Đăng nhập qua Facebook
+        </button>
+        <div class="login-footer">
+          <p class="red" ui-sref="sign-up">
+            <span class="text-underline">Bạn chưa là thành viên?</span>
+          </p>
+          <button ui-sref="sign-up" class="button button-around button-outline-clear">Đăng ký</button>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

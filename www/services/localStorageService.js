@@ -5,7 +5,7 @@ app.service('LocalStorageService', [function () {
     }
 
     service.getItem = function (key) {                
-        let result = localStorage.getItem(key);
+        var result = localStorage.getItem(key);
         return result ? JSON.parse(result) :null;
     }
 

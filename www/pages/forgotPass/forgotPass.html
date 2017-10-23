@@ -1,0 +1,32 @@
+<ion-view ng-controller="ForgotPasswordController as vm">
+  <ion-nav-bar class="bar-assertive" align-title="center">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-title>LẤY LẠI MẬT KHẨU</ion-nav-title>
+  </ion-nav-bar>
+  <ion-content class="padding-horizontal-10 sign-page">
+    <div class="logo-container center">
+      <img src="img/logo.png" class="logo">
+    </div>
+    <div class="">
+      <form class="form-default" name="forgotPasswordForm" novalidate ng-submit="vm.forgotPassword()">
+        <p class="red">Nhập email của bạn để lấy lại mật khẩu</p>
+        <div class="list">
+          <label class="item item-input input-field">
+            <span class="icon">
+              <i class="icon-envelope red"></i>
+            </span>
+            <input type="email" placeholder="Email" ng-model="vm.email" name="email" required>
+          </label>
+          <p class="error-validate" ng-show="forgotPasswordForm.email.$dirty && forgotPasswordForm.email.$invalid">
+            <span ng-show="forgotPasswordForm.email.$error.required">{{EMAIL_REQUIRED}}</span>
+            <span ng-show="forgotPasswordForm.email.$error.email">{{EMAIL_FORMAT}}</span>
+          </p>
+        </div>
+        <button type="submit" class="button button-block button-assertive button-around" 
+          ng-disabled="forgotPasswordForm.$invalid">
+          Tìm lại mật khẩu
+        </button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

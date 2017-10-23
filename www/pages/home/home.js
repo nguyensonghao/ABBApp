@@ -1,15 +1,26 @@
 "use strict";
 
-angular.module('AbbApp').controller('HomeController', ['$scope', 'UtilService', 'AuthService', function ($scope, UtilService, AuthService) {
+angular.module('AbbApp').controller('HomeController', ['$interval', 'UtilService', 'AuthService', function ($interval, UtilService, AuthService) {
   var vm = this;
   vm.title = APP_NAME;
 
-  vm.register = function () {
-    var user = {
-      email: vm.email,
-      password: '123456'
-    }
-    
-    AuthService.loginFacebook()
+  var loadData = function () {
+    countDownTime();
+    $interval(function () {
+      countDownTime();
+    }, 1000);
   }
+
+  var countDownTime = function () {
+    var date = new Date(COUNT_DOWN_TIME).getTime();
+    var currentDate = new Date().getTime();
+    var time = new Date(date - currentDate);
+    vm.countDownTime = [
+      {title: 'Ngày', time: time.getDate()},
+      {title: 'Giờ', time: time.getHours()},
+      {title: 'Phút', time: time.getMinutes()},
+      {title: 'Giây', time: time.getSeconds()}
+    ]
+  }
+  loadData();
 }])

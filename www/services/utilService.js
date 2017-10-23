@@ -1,12 +1,19 @@
-angular.module('AbbApp').service('UtilService', ['$ionicLoading', function ($ionicLoading) {
-  var service = {};
-  service.showLoading = function () {
-    $ionicLoading.show();
-  }
+app.service('UtilService', ['$ionicLoading', '$ionicPopup', function ($ionicLoading, $ionicPopup) {
+    var service = {};
+    service.showLoading = function () {
+        $ionicLoading.show();
+    }
 
-  service.hideLoading = function () {
-    $ionicLoading.hide();
-  }
+    service.hideLoading = function () {
+        $ionicLoading.hide();
+    }
+
+    service.showAlert = function (title, message) {
+        $ionicPopup.alert({
+            title: title,
+            template: message
+        });
+    }
 
   return service;
 }])

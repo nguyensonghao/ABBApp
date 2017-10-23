@@ -1,0 +1,72 @@
+<ion-view ng-controller="SignUpController as vm">
+  <ion-nav-bar class="bar-assertive" align-title="center">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-title>ĐĂNG KÝ</ion-nav-title>
+  </ion-nav-bar>
+  <ion-content class="padding-horizontal-10 sign-page">
+    <div class="">
+      <div class="logo-container center">
+        <img src="img/logo.png" class="logo">
+      </div>
+      <form class="form-default" name="signUpForm" novalidate>
+        <div class="list">
+          <label class="item item-input input-field">
+            <span class="icon">
+              <i class="icon-user red"></i>
+            </span>
+            <input type="text" placeholder="Họ và tên" ng-model="vm.user.username" name="username" required>
+          </label>
+          <p class="error-validate" ng-show="signUpForm.username.$dirty && signUpForm.username.$invalid">
+            <span ng-show="signUpForm.username.$error.required">{{USERNAME_REQUIRED}}</span>
+          </p>
+
+          <label class="item item-input input-field">
+            <span class="icon">
+              <i class="icon-phone red"></i>
+            </span>
+            <input type="tel" placeholder="Số điện thoại" ng-model="vm.user.phone" name="phone" required>
+          </label>
+          <p class="error-validate" ng-show="signUpForm.phone.$dirty && signUpForm.phone.$invalid">
+            <span ng-show="signUpForm.phone.$error.required">{{PHONE_REQUIRED}}</span>
+          </p>
+
+          <label class="item item-input input-field">
+            <span class="icon">
+              <i class="ion-at red"></i>
+            </span>
+            <input type="email" placeholder="Email" ng-model="vm.user.email" name="email" required>
+          </label>
+          <p class="error-validate" ng-show="signUpForm.email.$dirty && signUpForm.email.$invalid">
+            <span ng-show="signUpForm.email.$error.required">{{EMAIL_REQUIRED}}</span>
+            <span ng-show="signUpForm.email.$error.email">{{EMAIL_FORMAT}}</span>
+          </p>
+
+          <label class="item item-input input-field">
+            <span class="icon">
+              <i class="icon-key red"></i>
+            </span>
+            <input type="password" placeholder="Mật khẩu" ng-model="vm.user.password" name="password" ng-minlength="6" ng-maxlength="32" required>
+          </label>
+          <p class="error-validate" ng-show="signUpForm.password.$dirty && signUpForm.password.$invalid">
+            <span ng-show="signUpForm.password.$error.minlength">{{PASSWORD_MIN}}</span>
+            <span ng-show="signUpForm.password.$error.maxlength">{{PASSWORD_MAX}}</span>
+          </p>
+
+          <label class="item item-input input-field">
+            <span class="icon">
+              <i class="icon-key red"></i>
+            </span>
+            <input type="password" placeholder="Nhập lại mật khẩu" ng-model="vm.user.passwordConfirm">
+          </label>
+          <p class="error-validate" ng-show="!vm.isPasswordEqual(vm.user.password, vm.user.passwordConfirm)">
+            {{PASSWORD_CONFIRM_NOT_MATCH}}
+          </p>
+        </div>
+        <button type="submit" class="button button-block button-assertive button-around" ng-click="vm.register()"
+          ng-disabled="signUpForm.$invalid || !vm.isPasswordEqual(vm.user.password, vm.user.passwordConfirm)">
+          Đăng ký
+        </button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

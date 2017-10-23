@@ -1,0 +1,38 @@
+.home-page{
+  .logo-container{
+    margin-top: 30%;
+  }
+  .time{
+    background: #FFFFFF;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.10);
+    border-radius: 8px;
+    height: 150px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    .time_number{
+      color: $red;
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    .time_title{
+      bottom: 20px;
+      @include position-center-horizontal;
+    }
+  }
+  .action{
+    @extend .flex-row-around;
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    .action-item{
+      text-align: center;
+    }
+    p{
+      margin-top: 10px;
+    }
+  }
+}

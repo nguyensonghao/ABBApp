@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "685373680580",
+    "firebase_url": "https://abbapp-aba85.firebaseio.com",
+    "project_id": "abbapp-aba85",
+    "storage_bucket": "abbapp-aba85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685373680580:android:748defe0b98dd120",
+        "android_client_info": {
+          "package_name": "com.pg.abb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685373680580-baro7gavhcdd2io15ehg65jp7g72clcr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pg.abb",
+            "certificate_hash": "81f1f6ad42c54aeaf32f0414ccd78601f20e4ddd"
+          }
+        },
+        {
+          "client_id": "685373680580-6737nfva6bkp689jpr58r60j8h1ufgor.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDSAkGf0ogBNAISQ7Bwu1NzC0JDF3Q7m0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685373680580-6737nfva6bkp689jpr58r60j8h1ufgor.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

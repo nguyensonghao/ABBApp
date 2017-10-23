@@ -1,0 +1,10 @@
+.circle-checked:after {
+	content: "";
+    width: 11px;
+    height: 11px;
+    background: #e74c3c;
+    position: absolute;
+    border-radius: 50%;
+    margin-top: 1px;
+    margin-left: -5px;
+}

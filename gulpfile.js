@@ -2,6 +2,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var cleanCss = require('gulp-clean-css');
 var rename = require('gulp-rename');
+var postcss      = require('gulp-postcss');
+var sourcemaps   = require('gulp-sourcemaps');
+var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
 
 var paths = {
@@ -13,6 +16,9 @@ gulp.task('sass', function(done) {
   gulp.src('./www/scss/main.scss')
     .pipe(sass())
     .on('error', sass.logError)
+    .pipe(sourcemaps.init())
+    .pipe(postcss([ autoprefixer() ]))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./www/css/'))
     .pipe(cleanCss({
       keepSpecialComments: 0
