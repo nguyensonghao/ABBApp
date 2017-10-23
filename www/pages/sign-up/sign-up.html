@@ -12,8 +12,8 @@
             </span>
             <input type="text" placeholder="Họ và tên" ng-model="vm.user.username" name="username" required>
           </label>
-          <span class="error-validate" ng-show="signUpForm.username.$dirty && signUpForm.username.$invalid">
-            <span ng-show="signUpForm.username.$error.required">{{USERNAME_REQUIRED}}</span>
+          <span class="error-validate" ng-if="signUpForm.username.$dirty && signUpForm.username.$invalid">
+            <span ng-if="signUpForm.username.$error.required">{{USERNAME_REQUIRED}}</span>
           </span>
 
           <label class="item item-input input-field">
