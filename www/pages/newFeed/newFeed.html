@@ -4,22 +4,11 @@
     <ion-nav-title>SỰ KIỆN</ion-nav-title>
   </ion-nav-bar>
   <div class="bar bar-subheader">
-    <button class='button active'>Sự kiện</button>
-    <button class='button'>Bình chọn</button>
+    <button class='button' ng-class="vm.active('feeds')" ng-click="vm.changeTabs('feeds')">Sự kiện</button>
+    <button class='button' ng-class="vm.active('votes')" ng-click="vm.changeTabs('votes')">Bình chọn</button>
   </div>
   <ion-content padding="true" class="new-feed has-header has-subheader">
-
-    <div class="new-feed_list">
-      <div class="new-feed_item" ng-repeat="post in vm.posts" ui-sref="event-detail({id: post.id})">
-        <p class="item_date">{{vm.getDate(post.time)}}</p>
-        <p class="item_day">{{vm.getDay(post.time)}}</p>
-        <div class="item_content">
-          <div class="item_header">
-            <p class="item_title">{{post.title}}</p>
-          </div>
-          <img src="{{post.img}}"/>
-        </div>
-      </div>      
-    </div>
+    <ng-feeds ng-if="vm.type == 'feeds'"></ng-feeds>
+    <ng-votes ng-if="vm.type != 'feeds'"></ng-votes>
   </ion-content>
 </ion-view>

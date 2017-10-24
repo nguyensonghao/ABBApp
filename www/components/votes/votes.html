@@ -1,0 +1,17 @@
+<h2 class="heading">Các tiết mục</h2>
+<div class="new-feed_list">
+  <div class="new-feed_item" ng-repeat="vote in votes | orderBy : '-num'" ng-click="detail(vote)">
+    <div class="item_content">
+      <div class="item_header">
+        <p class="item_title">{{vote.title}}</p>
+        <p class="item_count"><i class="icon icon-badge"></i>{{vote.num}}</p>
+      </div>
+      <img src="{{vote.img}}"/>
+      <div class="item_footer">
+        <button class="button button-around button-white" ng-click="voteItem(vote, $event)">
+          Bình chọn
+        </button>
+      </div>
+    </div>
+  </div>      
+</div>

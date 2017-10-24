@@ -46,11 +46,18 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
 
     service.loginFacebook = function () {
         var deferred = $q.defer();
-        var provider = new firebase.auth.FacebookAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function (user) {
-            deferred.resolve(user);
-        }).catch(function (error) {
-            deferred.reject(error);
+        // var provider = new firebase.auth.FacebookAuthProvider();
+        // firebase.auth().signInWithPopup(provider).then(function (user) {
+        //     deferred.resolve(user);
+        // }).catch(function (error) {
+        //     deferred.reject(error);
+        // });
+        facebookConnectPlugin.login(["public_profile", "email"], function (data) {
+            var token = data.authResponse.accessToken; 
+            alert(token);
+            deferred.resolve(data);
+        }, function (error) {
+            deferred.resolve(null);
         });
 
         return deferred.promise;

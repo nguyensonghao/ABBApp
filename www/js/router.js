@@ -6,7 +6,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       templateUrl: 'pages/home/home.html'
     })
     .state('new-feed', {
-      url: '/new-feed',
+      url: '/new-feed/:type',
       templateUrl: 'pages/newFeed/newFeed.html'
     })
     .state('event-detail', {
