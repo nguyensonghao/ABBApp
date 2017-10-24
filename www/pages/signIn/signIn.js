@@ -1,5 +1,5 @@
-app.controller('SignInController', ['AuthService', 'LocalStorageService', '$rootScope', '$state', 'UtilService',
-function (AuthService, LocalStorageService, $rootScope, $state, UtilService) {
+app.controller('SignInController', ['AuthService', 'LocalStorageService', '$rootScope', '$state', 'UtilService', '$ionicHistory',
+function (AuthService, LocalStorageService, $rootScope, $state, UtilService , $ionicHistory) {
     var vm = this;
     vm.user = {};
 
@@ -14,8 +14,13 @@ function (AuthService, LocalStorageService, $rootScope, $state, UtilService) {
             
             $rootScope.CurrentUser = currentUser;
             UtilService.hideLoading();
+            $ionicHistory.nextViewOptions({
+                historyRoot: true,
+                disableBack: true
+            });
             $state.go('home');
-        })
+        }
+    )
     }
 
     vm.loginFacebook = function () {
