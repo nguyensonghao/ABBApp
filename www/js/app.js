@@ -2,6 +2,9 @@ app.run(['$ionicPlatform', '$rootScope', '$state', 'LocalStorageService', '$loca
   $ionicPlatform.ready(function() {
     // Remove backbutton in home screen
     $ionicPlatform.registerBackButtonAction(function(event) {
+      if(window.navigator && window.navigator.splashscreen) {
+        window.plugins.orientationLock.unlock();
+      }
       if ($location.path() == '/home'){
         event.preventDefault();
       } else {
