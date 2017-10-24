@@ -21,7 +21,8 @@ app.directive('ngFeeds', function () {
                 return date + " tháng " + month;
             }
 
-            $scope.getDay = function (time) {
+            $scope.getDay = function (
+                time) {
                 var d = new Date(time);
                 var day = d.getDay() + 1;
                 return day < 8 ? "Thứ " + day : "Chủ nhật"; 

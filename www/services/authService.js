@@ -9,7 +9,13 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
             deferred.resolve(user);
         }).catch(function (error) {
             UtilService.hideLoading();
-            UtilService.showAlert(error.message);
+            console.log(error);
+            if(error.code == 'auth/user-not-found'){
+                UtilService.showAlert('Email không đúng hoặc có thể email đã bị xóa.');
+            }
+            else if(error.code == 'auth/wrong-password'){
+                UtilService.showAlert('Password chưa đúng.Vui lòng nhập lại');
+            }
             deferred.reject(error);
         })
 
