@@ -15,5 +15,11 @@ app.service('UtilService', ['$ionicLoading', '$ionicPopup', function ($ionicLoad
         });
     }
 
+    service.showErrorLogin = function (err) {
+        switch (err.message) {
+            
+        }
+    }
+
   return service;
 }])

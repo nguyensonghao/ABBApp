@@ -10,7 +10,6 @@ app.controller('NewFeedController', ['DataService', 'UtilService', '$stateParams
     }
 
     vm.changeTabs = function (type) {
-        console.log(type);
         vm.type = type;
     }
 
