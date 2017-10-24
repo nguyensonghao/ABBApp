@@ -25,5 +25,8 @@
       background: $red;
       color: #ffffff;
     }
+    &:after{
+      display: none;
+    }
   }
 }

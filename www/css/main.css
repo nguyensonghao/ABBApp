@@ -9943,6 +9943,8 @@ a.button {
     .bar-subheader .button.active {
       background: #EA2227;
       color: #ffffff; }
+    .bar-subheader .button:after {
+      display: none; }
 
 .icon-star-menu {
   background-image: url("../img/icon-star.png");
@@ -10246,12 +10248,26 @@ a.button {
     width: 130px;
     margin: auto; }
 
-.sign-page .login-footer {
-  margin: 30% -8% 0 -8%; }
-  .sign-page .login-footer .button {
-    min-width: initial;
-    padding-left: 30px;
-    padding-right: 30px; }
+.sign-page {
+  padding-left: 10%;
+  padding-right: 10%; }
+  .sign-page .login-footer {
+    margin: 30% -8% 0 -8%; }
+    .sign-page .login-footer .button {
+      min-width: initial;
+      padding-left: 30px;
+      padding-right: 30px; }
+
+@media (max-width: 340px) {
+  .sign-page {
+    padding-left: 10px;
+    padding-right: 10px; }
+    .sign-page .login-footer {
+      margin-left: 0;
+      margin-right: 0; }
+      .sign-page .login-footer .button {
+        padding-left: 15px;
+        padding-right: 15px; } }
 
 * {
   font-family: 'Open Sans', sans-serif;
