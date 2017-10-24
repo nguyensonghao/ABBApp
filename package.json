@@ -18,7 +18,13 @@
         "cordova-plugin-splashscreen": "^4.0.3",
         "cordova-plugin-statusbar": "^2.2.1",
         "cordova-plugin-whitelist": "^1.3.1",
-        "ionic-plugin-keyboard": "^2.2.1"
+        "ionic-plugin-keyboard": "^2.2.1",
+        "cordova-plugin-browsertab": "~0.2.0",
+        "cordova-plugin-buildinfo": "~2.0.1",
+        "cordova-plugin-customurlscheme": "~4.3.0",
+        "cordova-plugin-facebook4": "~1.9.1",
+        "cordova-plugin-inappbrowser": "~1.7.1",
+        "cordova-universal-links-plugin": "~1.2.1"
     },
     "cordova": {
         "plugins": {
@@ -26,7 +32,21 @@
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-whitelist": {},
-            "ionic-plugin-keyboard": {}
+            "ionic-plugin-keyboard": {},
+            "cordova-plugin-browsertab": {},
+            "cordova-plugin-buildinfo": {},
+            "cordova-plugin-customurlscheme": {
+                "URL_SCHEME": "com.firebase.cordova",
+                "ANDROID_SCHEME": " ",
+                "ANDROID_HOST": " ",
+                "ANDROID_PATHPREFIX": "/"
+            },
+            "cordova-plugin-facebook4": {
+                "APP_ID": "648693908670867",
+                "APP_NAME": "ABBApp"
+            },
+            "cordova-plugin-inappbrowser": {},
+            "cordova-universal-links-plugin": {}
         },
         "platforms": [
             "android"
