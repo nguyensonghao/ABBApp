@@ -1,4 +1,5 @@
-app.controller('EventDetailController', ['$stateParams', 'DataService', 'UtilService', function ($stateParams, DataService, UtilService) {
+app.controller('EventDetailController', ['$stateParams', 'DataService', 'UtilService', 'youtubeEmbedUtils',
+function ($stateParams, DataService, UtilService, youtubeEmbedUtils) {
     var vm = this;
 
     var loadData = function () {
@@ -7,6 +8,10 @@ app.controller('EventDetailController', ['$stateParams', 'DataService', 'UtilSer
             vm.post = value;
             UtilService.hideLoading();
         })
+    }
+
+    vm.getIdVideo = function (video) {
+    	return youtubeEmbedUtils.getIdFromURL(video);
     }
 
     loadData();

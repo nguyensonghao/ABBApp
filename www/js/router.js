@@ -1,4 +1,4 @@
-var app = angular.module('AbbApp', ['ionic']);
+var app = angular.module('AbbApp', ['ionic', 'youtube-embed']);
 app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $stateProvider
     .state('home', {

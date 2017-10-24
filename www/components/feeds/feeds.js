@@ -5,7 +5,7 @@ app.directive('ngFeeds', function () {
         scope: {
             data: '=data'
         },
-        controller: ["$rootScope", "$scope", "UtilService", "DataService", "$timeout", '$state', function ($rootScope, $scope, UtilService, DataService, $timeout, $state) {
+        controller: ["$rootScope", "$scope", "UtilService", "DataService", "$timeout", '$state', 'youtubeEmbedUtils', function ($rootScope, $scope, UtilService, DataService, $timeout, $state, youtubeEmbedUtils) {
             var loadData = function () {
                 UtilService.showLoading();
                 DataService.all('articles').then(function (data) {
@@ -26,6 +26,14 @@ app.directive('ngFeeds', function () {
                 var d = new Date(time);
                 var day = d.getDay() + 1;
                 return day < 8 ? "Thứ " + day : "Chủ nhật"; 
+            }
+
+            $scope.getImageYoutube = function (video) {
+                return UtilService.getThumBnailYoutube(getIdVideo(video));
+            }
+
+            var getIdVideo = function (link) {
+                return youtubeEmbedUtils.getIdFromURL(link);
             }
 
             loadData();

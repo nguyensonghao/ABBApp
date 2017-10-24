@@ -4,10 +4,11 @@
     <ion-nav-title>TIẾT MỤC</ion-nav-title>
   </ion-nav-bar>
   <ion-content class="event-detail has-footer">
-    <div class="event-banner">
+    <div class="event-banner" style="margin-bottom: 0">
       <p class="event-title">{{vm.vote.title}}</p>
       <img src="{{vm.vote.img}}"/>
     </div>
+    <!-- <youtube-video video-id="vm.getIdVideo(vm.vote.video)" player-width="'100%'" player-height="'300px'" ng-if="vm.vote.video"></youtube-video> -->
     <div class="event-content">
       <p class="padding">
         {{vm.vote.content}}

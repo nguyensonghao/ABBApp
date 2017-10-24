@@ -1,10 +1,12 @@
-app.controller('VoteDetailController', ['$stateParams', 'DataService', 'UtilService', function ($stateParams, DataService, UtilService) {
+app.controller('VoteDetailController', ['$stateParams', 'DataService', 'UtilService', 'youtubeEmbedUtils', 
+function ($stateParams, DataService, UtilService, youtubeEmbedUtils) {
     var vm = this;
 
     var loadData = function () {
         UtilService.showLoading();
         DataService.findById('items', $stateParams.id).then(function (value) {
             vm.vote = value;
+            console.log(vm.vote.video);
             UtilService.hideLoading();
         })
     }
@@ -22,6 +24,10 @@ app.controller('VoteDetailController', ['$stateParams', 'DataService', 'UtilServ
     	}
 
     	DataService.update('items', voteUpdate);
+    }
+
+    vm.getIdVideo = function (link) {
+        return youtubeEmbedUtils.getIdFromURL(link);
     }
 
     loadData();

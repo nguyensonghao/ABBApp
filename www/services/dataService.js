@@ -25,6 +25,9 @@ app.service('DataService', ['$q', function ($q) {
                 result.push(list[key]);
             }
             deferred.resolve(result);
+        }, function (error) {
+            console.log("Error");
+            console.log(error);
         });
 
         return deferred.promise;

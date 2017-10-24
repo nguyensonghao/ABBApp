@@ -9,13 +9,16 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
             deferred.resolve(user);
         }).catch(function (error) {
             UtilService.hideLoading();
-            console.log(error);
-            if(error.code == 'auth/user-not-found'){
+            if (error.code == 'auth/user-not-found') {
                 UtilService.showAlert('Email không đúng hoặc có thể email đã bị xóa.');
+            } else if (error.code == 'auth/wrong-password') {
+                UtilService.showAlert('Mật khẩu chưa đúng.Vui lòng nhập lại.');
+            } else if (error.code == 'auth/network-request-failed') {
+                UtilService.showAlert('Thiết bị đang không kết nối mạng. Vui lòng kiểm tra lại đường truyền.');
+            } else {
+                UtilService.showAlert(error.message);
             }
-            else if(error.code == 'auth/wrong-password'){
-                UtilService.showAlert('Password chưa đúng.Vui lòng nhập lại');
-            }
+
             deferred.reject(error);
         })
 
@@ -34,12 +37,23 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
                 deferred.resolve(result);
             }).catch(function (error) {
                 UtilService.hideLoading();
-                UtilService.showAlert(error.message);
+                if (error.code == 'auth/network-request-failed') {
+                    UtilService.showAlert('Thiết bị đang không kết nối mạng. Vui lòng kiểm tra lại đường truyền.');
+                } else {
+                    UtilService.showAlert(error.message);
+                }
                 deferred.reject(error);
             })
         }).catch(function(error) {
+            if (error.code == 'auth/email-already-in-use') {
+                UtilService.showAlert("Email đã được đăng ký.");    
+            } else if (error.code == 'auth/network-request-failed') {
+                UtilService.showAlert('Thiết bị đang không kết nối mạng. Vui lòng kiểm tra lại đường truyền.');
+            } else {
+                UtilService.showAlert(error.message);
+            }
+
             UtilService.hideLoading();
-            UtilService.showAlert(error.message);
             deferred.reject(error);
         });       
         
@@ -58,6 +72,11 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
                 deferred.resolve(result);
             })
         }).catch(function (error) {
+            if (error.code == 'auth/network-request-failed') {
+                UtilService.showAlert('Thiết bị đang không kết nối mạng. Vui lòng kiểm tra lại đường truyền.');
+            } else {
+                UtilService.showAlert(error.message);
+            }            
             deferred.reject(error);
         });
 
@@ -77,6 +96,12 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
         firebase.auth().sendPasswordResetEmail(email).then(function (result) {
             deferred.resolve(true);
         }).catch(function (err) {
+            if (error.code == 'auth/network-request-failed') {
+                UtilService.showAlert('Thiết bị đang không kết nối mạng. Vui lòng kiểm tra lại đường truyền.');
+            } else {
+                UtilService.showAlert(error.message);
+            }
+
             UtilService.hideLoading();
             deferred.reject(err);
         })
