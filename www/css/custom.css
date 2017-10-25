@@ -16,3 +16,7 @@
 .ytp-title-link.yt-uix-sessionlink {
 	display: none;
 }
+
+.has-video {
+    height: 300px !important;
+}
