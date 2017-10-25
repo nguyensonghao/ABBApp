@@ -12,3 +12,7 @@
 .video-banner {
 	height: 300px !important;
 }
+
+.ytp-title-link.yt-uix-sessionlink {
+	display: none;
+}

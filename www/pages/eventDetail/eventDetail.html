@@ -6,7 +6,7 @@
   <ion-content class="event-detail">
     <div class="event-banner" ng-class="vm.post.video ? 'video-banner' : ''">
       <p class="event-title" ng-if="!vm.post.video">{{vm.post.title}}</p>
-      <youtube-video video-id="vm.getIdVideo(vm.post.video)" player-width="'100%'" player-height="'300px'" ng-if="vm.post.video"></youtube-video>
+      <youtube-video video-id="vm.getIdVideo(vm.post.video)" player-width="'100%'" player-height="'300px'" ng-if="vm.post.video" player-vars="vm.playerVars"></youtube-video>
       <img src="{{vm.post.img}}" ng-if="!vm.post.video"/>
     </div>
     <div class="event-content">

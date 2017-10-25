@@ -14,5 +14,10 @@ function ($stateParams, DataService, UtilService, youtubeEmbedUtils) {
     	return youtubeEmbedUtils.getIdFromURL(video);
     }
 
+    vm.playerVars = {
+        controls: 1,
+        showinfo: 0
+    };
+
     loadData();
 }])

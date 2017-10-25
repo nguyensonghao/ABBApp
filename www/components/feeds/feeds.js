@@ -14,6 +14,11 @@ app.directive('ngFeeds', function () {
                 })
             }
 
+            $scope.playerVars = {
+                controls: 1,
+                showinfo: 0
+            };
+
             $scope.getDate = function (time) {
                 var d = new Date(time);
                 var month = d.getMonth() + 1;
@@ -32,7 +37,7 @@ app.directive('ngFeeds', function () {
                 return UtilService.getThumBnailYoutube(getIdVideo(video));
             }
 
-            var getIdVideo = function (link) {
+            $scope.getIdVideo = function (link) {
                 return youtubeEmbedUtils.getIdFromURL(link);
             }
 
