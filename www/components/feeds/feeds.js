@@ -14,6 +14,7 @@ app.directive('ngFeeds', function () {
                 })
             }
 
+            $scope.listYoutube = [];
             $scope.playerVars = {
                 controls: 1,
                 showinfo: 0
@@ -39,6 +40,20 @@ app.directive('ngFeeds', function () {
 
             $scope.getIdVideo = function (link) {
                 return youtubeEmbedUtils.getIdFromURL(link);
+            }
+
+            $scope.goDetail = function (post) {
+                for (var key in $scope.listYoutube) {
+                    $scope.listYoutube[key].stopVideo();
+                }
+
+                $state.go('event-detail', {
+                    id: post.id
+                })
+            }
+
+            $scope.classVideo = function (video) {
+                return video ? 'has-video' : '';
             }
 
             loadData();
