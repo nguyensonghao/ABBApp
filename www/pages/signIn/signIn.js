@@ -18,6 +18,7 @@ function (AuthService, LocalStorageService, $rootScope, $state, UtilService , $i
                 historyRoot: true,
                 disableBack: true
             });
+            
             $state.go('home');
         }
     )

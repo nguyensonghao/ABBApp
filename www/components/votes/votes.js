@@ -5,7 +5,7 @@ app.directive('ngVotes', function () {
         scope: {
             data: '=data'
         },
-        controller: ["$rootScope", "$scope", "UtilService", "DataService", "$timeout", '$state', function ($rootScope, $scope, UtilService, DataService, $timeout, $state) {
+        controller: ["$rootScope", "$scope", "UtilService", "DataService", "$timeout", '$state', '$rootScope', function ($rootScope, $scope, UtilService, DataService, $timeout, $state, $rootScope) {
             var loadData = function () {
                 UtilService.showLoading();
                 firebase.database().ref('items').on("value", function(list) {
@@ -31,18 +31,31 @@ app.directive('ngVotes', function () {
 
             $scope.voteItem = function (vote, event) {
                 event.stopPropagation();
-                vote.num = vote.num ? ++ vote.num : 1;
-                var voteUpdate = {
-                    id: vote.id,
-                    title: vote.title,
-                    content: vote.content,
-                    img: vote.img,
-                    video: vote.video,
-                    imageName: vote.imageName,
-                    num: vote.num
-                }
+                if (!vote.listUser)
+                        vote.listUser = [];
+                if (vote.listUser.indexOf($rootScope.CurrentUser.id) == -1) {
+                    event.stopPropagation();
+                    vote.num = vote.num ? ++ vote.num : 1;
+                    vote.listUser.push($rootScope.CurrentUser.id);
+                    var voteUpdate = {
+                        id: vote.id,
+                        title: vote.title,
+                        content: vote.content,
+                        img: vote.img,
+                        video: vote.video,
+                        imageName: vote.imageName,
+                        num: vote.num,
+                        listUser: vote.listUser
+                    }
 
-                DataService.update('items', voteUpdate);
+                    DataService.update('items', voteUpdate);
+                }
+            }
+
+            $scope.isVoted = function (vote) {
+                if (!vote.listUser)
+                    return false;
+                return vote.listUser.indexOf($rootScope.CurrentUser.id) != -1
             }
 
             loadData();

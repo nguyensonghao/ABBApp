@@ -8,7 +8,7 @@
       </div>
       <img src="{{vote.img}}"/>
       <div class="item_footer">
-        <button class="button button-around button-white" disabled="disabled" ng-click="voteItem(vote, $event)">
+        <button class="button button-around button-white" ng-disabled="isVoted(vote)" ng-click="voteItem(vote, $event)">
           Bình chọn
         </button>
       </div>

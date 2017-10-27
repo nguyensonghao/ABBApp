@@ -87,7 +87,8 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
         return {
             email: user.email,
             phone: user.photoURL,
-            username: user.displayName
+            username: user.displayName,
+            id: user.uid
         }
     }
 

@@ -20,3 +20,7 @@
 .has-video {
     height: 300px !important;
 }
+
+.button.disabled, .button[disabled] {
+    pointer-events: auto !important;
+}
