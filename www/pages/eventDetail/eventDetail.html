@@ -1,7 +1,10 @@
-<ion-view ng-controller="EventDetailController as vm">
+<ion-view ng-controller="EventDetailController as vm" >
   <ion-nav-bar class="bar-assertive" align-title="center">
     <ion-nav-back-button></ion-nav-back-button>
     <ion-nav-title>SỰ KIỆN</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <input type="image" src="img/exitWhite.png"  width="70%" height="100%"  ng-click="$root.signOut()">
+    </ion-nav-buttons>
   </ion-nav-bar>
   <ion-content class="event-detail">
     <div class="event-banner" ng-class="vm.post.video ? 'video-banner' : ''">

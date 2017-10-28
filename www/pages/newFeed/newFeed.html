@@ -2,6 +2,9 @@
   <ion-nav-bar class="bar-assertive" align-title="center">
     <ion-nav-back-button></ion-nav-back-button>
     <ion-nav-title>SỰ KIỆN</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <input type="image" src="img/exitWhite.png"  width="70%" height="100%"  ng-click="$root.signOut()">
+    </ion-nav-buttons>
   </ion-nav-bar>
   <div class="bar bar-subheader">
     <button class='button' ng-class="vm.active('feeds')" ng-click="vm.changeTabs('feeds')">Sự kiện</button>

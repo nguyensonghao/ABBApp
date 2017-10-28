@@ -61,7 +61,15 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
     }
 
     service.logout = function () {
-        
+        var deferred = $q.defer();
+        firebase.auth().signOut().then(function(result) {
+            deferred.resolve(result);
+            console.log('Signed Out');
+          }, function(error) {
+            deferred.reject(error);
+            console.error('Sign Out Error', error);
+          });
+          return deferred.promise;
     }
 
     service.loginFacebook = function () {

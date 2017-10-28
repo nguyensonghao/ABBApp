@@ -15,6 +15,31 @@ app.service('UtilService', ['$ionicLoading', '$ionicPopup', function ($ionicLoad
         });
     }
 
+    service.showConfirm = function (title, message) {
+        var alertPopup = $ionicPopup.show({
+            title: title,
+            template: message,
+            cssClass: 'ffPopup',
+            buttons: [
+                {
+                    text: 'Hủy',
+                    type: 'popclose',
+                    onTap: function (e) {
+
+                    }
+                },
+              {
+                  text: 'OK',
+                  type: 'button-full button-assertive',
+                  onTap: function (e) {
+                      return 'ok';
+                  }
+              }
+            ]
+        });
+        return alertPopup;
+    }
+    
     service.showErrorLogin = function (err) {
         switch (err.message) {
             
