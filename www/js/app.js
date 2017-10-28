@@ -1,16 +1,16 @@
 app.run(['$ionicPlatform', '$rootScope', '$state', 'LocalStorageService', '$location', '$ionicHistory', function($ionicPlatform, $rootScope, $state, LocalStorageService, $location, $ionicHistory) {
   $ionicPlatform.ready(function() {
     // Remove backbutton in home screen
-    $ionicPlatform.registerBackButtonAction(function(event) {
-      if(window.navigator && window.navigator.splashscreen) {
-        window.plugins.orientationLock.unlock();
-      }
-      if ($location.path() == '/home'){
-        event.preventDefault();
-      } else {
-        $ionicHistory.goBack();
-      }
-    }, 100)
+    // $ionicPlatform.registerBackButtonAction(function(event) {
+    //   if(window.navigator && window.navigator.splashscreen) {
+    //     window.plugins.orientationLock.unlock();
+    //   }
+    //   if ($location.path() == '/home'){
+    //     event.preventDefault();
+    //   } else {
+    //     $ionicHistory.goBack();
+    //   }
+    // }, 100)
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
