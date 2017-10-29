@@ -20,14 +20,15 @@ function (AuthService, LocalStorageService, $rootScope, $state, UtilService , $i
             });
             
             $state.go('home');
-        }
-    )
+        })
     }
 
     vm.loginFacebook = function () {
+        UtilService.showLoading();
         AuthService.loginFacebook().then(function (data) {
             LocalStorageService.setItem('currentUser', data.user);
             $rootScope.CurrentUser = data.user;
+            UtilService.hideLoading();
             $state.go('home');
         })
     }

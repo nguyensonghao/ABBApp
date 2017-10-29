@@ -6,7 +6,7 @@ app.service('LocalStorageService', [function () {
 
     service.getItem = function (key) {                
         var result = localStorage.getItem(key);
-        return result ? JSON.parse(result) :null;
+        return result && result != 'undefined' ? JSON.parse(result) :null;
     }
 
     service.deleteItem = function (key) {                        

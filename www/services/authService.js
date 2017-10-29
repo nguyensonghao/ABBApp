@@ -74,18 +74,52 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
 
     service.loginFacebook = function () {
         var deferred = $q.defer();
-        var provider = new firebase.auth.FacebookAuthProvider();
-        firebase.auth().signInWithRedirect(provider).then(function (user) {
-            firebase.auth().getRedirectResult().then(function (result) {
-                deferred.resolve(result);
-            })
-        }).catch(function (error) {
-            if (error.code == 'auth/network-request-failed') {
-                UtilService.showAlert('Thiết bị đang không kết nối mạng. Vui lòng kiểm tra lại đường truyền.');
+        // var provider = new firebase.auth.FacebookAuthProvider();
+        // firebase.auth().signInWithRedirect(provider).then(function (user) {
+        //     firebase.auth().getRedirectResult().then(function (result) {
+        //         deferred.resolve(result);
+        //     })
+        // }).catch(function (error) {
+        //     if (error.code == 'auth/network-request-failed') {
+        //         UtilService.showAlert('Thiết bị đang không kết nối mạng. Vui lòng kiểm tra lại đường truyền.');
+        //     } else {
+        //         UtilService.showAlert(error.message);
+        //     }            
+        //     deferred.reject(error);
+        // });
+        facebookConnectPlugin.getLoginStatus(function (status){
+            if (status) {
+                facebookConnectPlugin.login(["public_profile"], function (data) {
+                    service.getInformationFacebook().then(function (result) {
+                        deferred.resolve({
+                            uid: result.id,
+                            email: result.email,
+                            displayName: result.name,
+                            photoURL: result.picture.data.url
+                        });
+                    })
+                })
             } else {
-                UtilService.showAlert(error.message);
-            }            
-            deferred.reject(error);
+                service.getInformationFacebook().then(function (result) {
+                    deferred.resolve({
+                        uid: result.id,
+                        email: result.email,
+                        displayName: result.name,
+                        photoURL: result.picture.data.url
+                    });
+                })
+            }
+        })
+
+        return deferred.promise;
+    }
+
+    service.getInformationFacebook = function () {
+        var deferred = $q.defer();
+        facebookConnectPlugin.api('/me?fields=name,picture,email', null, function(response) {
+            deferred.resolve(response);
+        }, function (error) {
+            deferred.resolve(null);
         });
 
         return deferred.promise;
