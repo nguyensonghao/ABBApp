@@ -98,6 +98,8 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
                             photoURL: result.picture.data.url
                         });
                     })
+                }, function (error) {
+                    console.log(error);
                 })
             } else {
                 service.getInformationFacebook().then(function (result) {
@@ -119,6 +121,7 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
         facebookConnectPlugin.api('/me?fields=name,picture,email', null, function(response) {
             deferred.resolve(response);
         }, function (error) {
+            console.log(error);
             deferred.resolve(null);
         });
 

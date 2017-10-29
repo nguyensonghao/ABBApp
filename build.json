@@ -6,13 +6,6 @@
              "alias": "androiddebugkey",
              "password" : "android",
              "keystoreType": ""
-         }, 
-		 "debug": {
-            "keystore": "D:\\PGProject\\SocialBusiness\\debug.keystore",
-             "storePassword": "android",
-             "alias": "androiddebugkey",
-             "password" : "android",
-             "keystoreType": ""
          }
      }
  }
