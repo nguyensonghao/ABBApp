@@ -3,9 +3,10 @@
     <ion-nav-back-button></ion-nav-back-button>
     <ion-nav-title>SỰ KIỆN</ion-nav-title>
     <ion-nav-buttons side="right">
-        <input type="image" src="img/exitWhite.png"  width="70%" height="100%"  ng-click="$root.signOut()">
+      <i class="icon-logout light" ng-click="$root.signOut()" style="font-size: 30px"></i>
     </ion-nav-buttons>
   </ion-nav-bar>
+
   <ion-content class="event-detail">
     <div class="event-banner" ng-class="vm.post.video ? 'video-banner' : ''">
       <p class="event-title" ng-if="!vm.post.video">{{vm.post.title}}</p>
