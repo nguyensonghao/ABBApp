@@ -87,30 +87,17 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
         //     }            
         //     deferred.reject(error);
         // });
-        facebookConnectPlugin.getLoginStatus(function (status){
-            if (status) {
-                facebookConnectPlugin.login(["public_profile"], function (data) {
-                    service.getInformationFacebook().then(function (result) {
-                        deferred.resolve({
-                            uid: result.id,
-                            email: result.email,
-                            displayName: result.name,
-                            photoURL: result.picture.data.url
-                        });
-                    })
-                }, function (error) {
-                    console.log(error);
-                })
-            } else {
-                service.getInformationFacebook().then(function (result) {
-                    deferred.resolve({
-                        uid: result.id,
-                        email: result.email,
-                        displayName: result.name,
-                        photoURL: result.picture.data.url
-                    });
-                })
-            }
+        facebookConnectPlugin.login(["public_profile"], function (data) {
+            service.getInformationFacebook().then(function (result) {
+                deferred.resolve({
+                    uid: result.id,
+                    email: result.email,
+                    displayName: result.name,
+                    photoURL: result.picture.data.url
+                });
+            })
+        }, function (error) {
+            deferred.resolve(null);
         })
 
         return deferred.promise;
