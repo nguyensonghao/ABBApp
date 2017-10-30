@@ -26,8 +26,9 @@ function (AuthService, LocalStorageService, $rootScope, $state, UtilService , $i
     vm.loginFacebook = function () {
         UtilService.showLoading();
         AuthService.loginFacebook().then(function (data) {
-            LocalStorageService.setItem('currentUser', data);
-            $rootScope.CurrentUser = data;
+            var currentUser = AuthService.getCurrentUser(data);
+            LocalStorageService.setItem('currentUser', currentUser);
+            $rootScope.CurrentUser = currentUser;
             UtilService.hideLoading();
             $state.go('home');
         })
