@@ -3,8 +3,9 @@
     <ion-nav-title>SỰ KIỆN</ion-nav-title>
   </ion-nav-bar> -->
   <ion-nav-bar align-title="center">
-    <ion-nav-buttons side="right" >
-      <input type="image" src="img/exit.png" width="70%" height="100%" ng-click="$root.signOut()">
+    <ion-nav-buttons side="left" >
+      <i class="icon-logout red" ng-click="$root.signOut()" style="font-size: 30px"></i>
+      <!--<input type="image" src="img/exit.png" width="70%" height="100%" ng-click="$root.signOut()">-->
     </ion-nav-buttons>  
   </ion-nav-bar>
   <ion-content class="padding home-page" scroll="false">
@@ -22,13 +23,13 @@
     <div class="action">
       <div class="action-item" ui-sref="new-feed({type: 'feeds'})">
         <button class="button-circle">
-          <i class="icon-diamond"></i>
+          <i class="icon icon-diamond"></i>
         </button>
         <p>Sự kiện</p>
       </div>
       <div class="action-item" ui-sref="new-feed({type: 'votes'})">
         <button class="button-circle">
-          <i class="icon-badge"></i>
+          <i class="icon icon-badge"></i>
         </button>
         <p>Bình chọn</p>
       </div>
