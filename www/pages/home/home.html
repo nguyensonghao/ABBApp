@@ -1,7 +1,9 @@
-<ion-view view-title="{{vm.title}}" ng-controller="HomeController as vm" cache-view="false" hide-back-button="true">
-  <!-- <ion-nav-bar class="bar-assertive" align-title="center">
-    <ion-nav-title>SỰ KIỆN</ion-nav-title>
-  </ion-nav-bar> -->
+<ion-view  ng-controller="HomeController as vm" cache-view="false" >
+  <ion-nav-bar align-title="center" >
+    <ion-nav-buttons side="right">
+      <i class="icon-logout red" ng-click="$root.signOut()" style="font-size: 30px"></i>
+    </ion-nav-buttons>
+  </ion-nav-bar>
   <ion-content class="padding home-page" scroll="false">
     <div class="logo-container center">
       <img src="img/logo.png" class="logo">
@@ -16,11 +18,15 @@
     </div>
     <div class="action">
       <div class="action-item" ui-sref="new-feed({type: 'feeds'})">
-        <button class="button-circle"><i class="icon-diamond"></i></button>
+        <button class="button-circle">
+          <i class="icon icon-diamond"></i>
+        </button>
         <p>Sự kiện</p>
       </div>
       <div class="action-item" ui-sref="new-feed({type: 'votes'})">
-        <button class="button-circle"><i class="icon-badge"></i></button>
+        <button class="button-circle">
+          <i class="icon icon-badge"></i>
+        </button>
         <p>Bình chọn</p>
       </div>
     </div>

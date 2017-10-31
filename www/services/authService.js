@@ -61,23 +61,55 @@ app.service('AuthService', ['$q', 'UtilService', function ($q, UtilService) {
     }
 
     service.logout = function () {
-        
+        var deferred = $q.defer();
+        firebase.auth().signOut().then(function(result) {
+            deferred.resolve(result);
+            console.log('Signed Out');
+          }, function(error) {
+            deferred.reject(error);
+            console.error('Sign Out Error', error);
+          });
+          return deferred.promise;
     }
 
     service.loginFacebook = function () {
         var deferred = $q.defer();
-        var provider = new firebase.auth.FacebookAuthProvider();
-        firebase.auth().signInWithRedirect(provider).then(function (user) {
-            firebase.auth().getRedirectResult().then(function (result) {
-                deferred.resolve(result);
+        // var provider = new firebase.auth.FacebookAuthProvider();
+        // firebase.auth().signInWithRedirect(provider).then(function (user) {
+        //     firebase.auth().getRedirectResult().then(function (result) {
+        //         deferred.resolve(result);
+        //     })
+        // }).catch(function (error) {
+        //     if (error.code == 'auth/network-request-failed') {
+        //         UtilService.showAlert('Thiết bị đang không kết nối mạng. Vui lòng kiểm tra lại đường truyền.');
+        //     } else {
+        //         UtilService.showAlert(error.message);
+        //     }            
+        //     deferred.reject(error);
+        // });
+        facebookConnectPlugin.login(["public_profile"], function (data) {
+            service.getInformationFacebook().then(function (result) {
+                deferred.resolve({
+                    uid: result.id,
+                    email: result.email,
+                    displayName: result.name,
+                    photoURL: result.picture.data.url
+                });
             })
-        }).catch(function (error) {
-            if (error.code == 'auth/network-request-failed') {
-                UtilService.showAlert('Thiết bị đang không kết nối mạng. Vui lòng kiểm tra lại đường truyền.');
-            } else {
-                UtilService.showAlert(error.message);
-            }            
-            deferred.reject(error);
+        }, function (error) {
+            deferred.resolve(null);
+        })
+
+        return deferred.promise;
+    }
+
+    service.getInformationFacebook = function () {
+        var deferred = $q.defer();
+        facebookConnectPlugin.api('/me?fields=name,picture,email', null, function(response) {
+            deferred.resolve(response);
+        }, function (error) {
+            console.log(error);
+            deferred.resolve(null);
         });
 
         return deferred.promise;

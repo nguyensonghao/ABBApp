@@ -1,6 +1,9 @@
 <ion-view ng-controller="VoteController as vm">
   <ion-nav-bar class="bar-assertive" align-title="center">
     <ion-nav-title>BÌNH CHỌN</ion-nav-title>
+    <ion-nav-buttons side="right">
+      <i class="icon-logout light" ng-click="$root.signOut()" style="font-size: 30px"></i>
+    </ion-nav-buttons>
   </ion-nav-bar>
   <ion-content padding="true" class="new-feed">
   <h2 class="heading">Các tiết mục</h2>

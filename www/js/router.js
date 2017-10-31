@@ -34,8 +34,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       templateUrl: 'pages/voteDetail/voteDetail.html'
     })
 
-  var user = JSON.parse(localStorage.getItem('currentUser'));
-  if (user) {
+  var user = localStorage.getItem('currentUser');
+  if (user && user != 'undefined') {
     $urlRouterProvider.otherwise('/home');
   } else {
     $urlRouterProvider.otherwise('/sign-in');

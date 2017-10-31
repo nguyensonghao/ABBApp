@@ -30,6 +30,9 @@
     bottom: 10%;
     .action-item{
       text-align: center;
+      .icon{
+        @include position-center;
+      }
     }
     p{
       margin-top: 10px;
