@@ -9886,7 +9886,8 @@ a.button {
   border: none;
   background-color: #EA2227;
   color: white;
-  font-size: 22px; }
+  font-size: 22px;
+  position: relative; }
 
 .button-white {
   background-color: #ffffff;
@@ -9896,6 +9897,9 @@ a.button {
   background: #ffffff;
   border-color: #EA2227;
   color: #EA2227; }
+
+.button[disabled] {
+  opacity: 0.7; }
 
 .input-field {
   position: relative;
@@ -10122,7 +10126,8 @@ a.button {
 .new-feed .heading {
   font-weight: 900;
   color: #615c5c;
-  margin-top: 20px; }
+  margin-top: 20px;
+  font-family: SFPro-Heavy, sans-serif; }
 
 .new-feed_item {
   margin-bottom: 20px; }
@@ -10138,8 +10143,8 @@ a.button {
     position: relative;
     margin-top: 20px;
     height: 420px;
-    -webkit-box-shadow: 0 7px 9px 0 #e2e2e2;
-            box-shadow: 0 7px 9px 0 #e2e2e2; }
+    -webkit-box-shadow: 0 7px 9px 4px #afaeae;
+            box-shadow: 0 7px 9px 4px #afaeae; }
     .new-feed_item .item_content .item_header {
       position: absolute;
       top: 10px;
@@ -10240,6 +10245,12 @@ a.button {
   bottom: 10%; }
   .home-page .action .action-item {
     text-align: center; }
+    .home-page .action .action-item .icon {
+      position: absolute;
+      top: 50% !important;
+      left: 50% !important;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
   .home-page .action p {
     margin-top: 10px; }
 
@@ -10280,5 +10291,9 @@ p {
 
 .has-footer {
   bottom: 80px; }
+
+@font-face {
+  font-family: SFPro-Heavy;
+  src: url(../assets/font/SF-Pro-Text-Heavy.otf); }
 
 /*# sourceMappingURL=main.css.map */
