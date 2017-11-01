@@ -9934,21 +9934,25 @@ a.button {
   background-image: none;
   padding: 0; }
   .bar-subheader .button {
-    color: #EA2227;
+    color: #ADADAD;
     width: 50%;
-    border: 1px solid #EA2227;
     background: #ffffff;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 600;
     border-radius: 0; }
-    .bar-subheader .button:last-child {
-      position: initial !important;
-      border-left: none; }
+    .bar-subheader .button.activated {
+      border: none; }
     .bar-subheader .button.active {
-      background: #EA2227;
-      color: #ffffff; }
+      color: #EA2227;
+      background: #ffffff;
+      border: none; }
     .bar-subheader .button:after {
       display: none; }
+    .bar-subheader .button:last-child {
+      position: initial !important;
+      border-left: 1px solid #ADADAD;
+      margin-top: 5px;
+      margin-bottom: 5px; }
 
 .icon-star-menu {
   background-image: url("../img/icon-star.png");
@@ -10148,7 +10152,8 @@ a.button {
     .new-feed_item .item_content .item_header {
       position: absolute;
       top: 10px;
-      left: 0; }
+      left: 0;
+      z-index: 999; }
     .new-feed_item .item_content .item_title {
       color: #ffffff;
       font-size: 20px;
@@ -10176,6 +10181,14 @@ a.button {
       bottom: 20px;
       width: 100%;
       text-align: center; }
+
+.new-feed .bg-opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(62, 61, 61, 0.6); }
 
 .event-detail .event-banner {
   position: relative;
