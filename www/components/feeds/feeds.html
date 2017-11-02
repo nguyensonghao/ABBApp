@@ -5,7 +5,8 @@
 	  	<div class="item_content" ng-class="classVideo(post.video)">
 	    	<div class="item_header">
 	      		<p class="item_title">{{post.title}}</p>
-	    	</div>
+			</div>
+			<div class="bg-opacity" ng-if="!post.video"></div>
 	    	<img src="{{post.img}}" ng-if="!post.video"/>
 	    	<youtube-video video-url="post.video" player-width="'100%'" player-height="'300px'" 
 	    		ng-if="post.video" player-vars="playerVars" player="listYoutube[$index]">
