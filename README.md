@@ -1,27 +1,15 @@
-Ionic App Base
-==============
+Auth: nguyensonghao974@gmail.com
 
-A starting project for Ionic that optionally supports using custom SCSS.
+Password build android: thaibinh1994
+=== Get keystore ===
+keytool -list -v -keystore c:\users\admin\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android
 
-## Using this project
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
 
-We recommend using the [Ionic CLI](https://github.com/ionic-team/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
+Opem cmd and run "ionic serve"
 
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore android-release-unsigned.apk alias_name
 
-```bash
-$ npm install -g ionic cordova
-```
+zipalign -v 4 android-release-unsigned.apk android.apk
 
-Then run:
-
-```bash
-$ ionic start myProject tabs --type=ionic1
-```
-
-More info on this can be found on the Ionic [Getting Started](https://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/ionic-team/ionic-cli) repo.
-
-## Issues
-
-Issues have been disabled on this repo. If you do find an issue or have a question, consider posting it on the [Ionic Forum](https://forum.ionicframework.com/). If there is truly an error, follow our guidelines for [submitting an issue](https://ionicframework.com/submit-issue/) to the main Ionic repository.
-"# ABBApp" 
+keytool -exportcert -alias -keystore my-release-key.keystore | openssl sha1 -binary | openssl base64

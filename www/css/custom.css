@@ -24,3 +24,7 @@
 .button.disabled, .button[disabled] {
     pointer-events: auto !important;
 }
+
+.home-view ion-header-bar {
+    border: none !important;
+}
