@@ -9937,7 +9937,7 @@ a.button {
     color: #ADADAD;
     width: 50%;
     background: #ffffff;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 600;
     border-radius: 0; }
     .bar-subheader .button.activated {
@@ -10156,10 +10156,9 @@ a.button {
       z-index: 999; }
     .new-feed_item .item_content .item_title {
       color: #ffffff;
-      font-size: 20px;
+      font-size: 25px;
       font-weight: 700;
-      padding: 0 10px;
-      text-shadow: 2px 2px 2px #4a4a4a; }
+      padding: 0 10px; }
     .new-feed_item .item_content .item_count {
       color: #ffffff;
       padding-left: 10px;
@@ -10182,7 +10181,7 @@ a.button {
       width: 100%;
       text-align: center; }
 
-.new-feed .bg-opacity {
+.bg-opacity {
   position: absolute;
   top: 0;
   left: 0;
@@ -10200,9 +10199,10 @@ a.button {
     top: 10px;
     left: 10px;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
-    padding-right: 30px; }
+    padding-right: 30px;
+    z-index: 9999; }
   .event-detail .event-banner .icon {
     position: absolute;
     top: 10px;
@@ -10216,6 +10216,9 @@ a.button {
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover; }
+
+.event-detail .event-content {
+  padding-bottom: 30px; }
 
 .home-page .logo-container {
   margin-top: 30%; }

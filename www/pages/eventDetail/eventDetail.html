@@ -1,4 +1,4 @@
-<ion-view ng-controller="EventDetailController as vm" >
+<ion-view ng-controller="EventDetailController as vm" cache-view="false">
   <ion-nav-bar class="bar-assertive" align-title="center">
     <ion-nav-back-button></ion-nav-back-button>
     <ion-nav-title>SỰ KIỆN</ion-nav-title>
@@ -10,6 +10,7 @@
   <ion-content class="event-detail">
     <div class="event-banner" ng-class="vm.post.video ? 'video-banner' : ''">
       <p class="event-title" ng-if="!vm.post.video">{{vm.post.title}}</p>
+      <div class="bg-opacity" ng-if="!vm.post.video" ></div>
       <youtube-video video-id="vm.getIdVideo(vm.post.video)" player-width="'100%'" player-height="'300px'" ng-if="vm.post.video"></youtube-video>
       <img src="{{vm.post.img}}" ng-if="!vm.post.video"/>
     </div>
