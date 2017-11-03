@@ -3,6 +3,7 @@ app.controller('NewFeedController', ['DataService', 'UtilService', '$stateParams
 
     var loadData = function () {
         vm.type = $stateParams.type;
+        vm.title = vm.type == 'feeds' ? 'SỰ KIỆN' : 'TIẾT MỤC'; 
     }
 
     vm.active = function (tabs) {
@@ -10,6 +11,7 @@ app.controller('NewFeedController', ['DataService', 'UtilService', '$stateParams
     }
 
     vm.changeTabs = function (type) {
+        vm.title = type == 'feeds' ? 'SỰ KIỆN' : 'TIẾT MỤC';
         vm.type = type;
     }
 

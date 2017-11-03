@@ -12,4 +12,4 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.
 
 zipalign -v 4 android-release-unsigned.apk android.apk
 
-keytool -exportcert -alias -keystore my-release-key.keystore | openssl sha1 -binary | openssl base64
+keytool -exportcert -alias my_key -keystore my-release-key.keystore | openssl sha1 -binary | openssl base64
