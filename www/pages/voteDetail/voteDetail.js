@@ -48,5 +48,9 @@ function ($stateParams, DataService, UtilService, youtubeEmbedUtils, $rootScope)
         return youtubeEmbedUtils.getIdFromURL(link);
     }
 
+    vm.isVoted = function () {
+        return vm.vote.listUser.indexOf($rootScope.CurrentUser.id) > -1;
+    }
+
     loadData();
 }])
