@@ -10329,12 +10329,19 @@ a.button {
       padding-right: 30px; }
 
 .add-vote-page .item-img {
-  max-height: 420px; }
+  max-height: 420px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px; }
   .add-vote-page .item-img img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover; }
+
+.add-vote-page .button-add {
+  text-align: center;
+  margin-top: 10px; }
 
 @media (max-width: 340px) {
   .sign-page {
