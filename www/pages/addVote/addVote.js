@@ -10,7 +10,7 @@ function ($stateParams, DataService, UtilService, $rootScope) {
             img: "https://firebasestorage.googleapis.com/v0/b/abbapp-b24de.appspot.com/o/article%2F1510112907454.png?alt=media&token=690d2fcf-8282-4ccd-a64b-76ea80b4193a",
             imageName: "https://firebasestorage.googleapis.com/v0/b/abbapp-b24de.appspot.com/o/article%2F1510112907454.png?alt=media&token=690d2fcf-8282-4ccd-a64b-76ea80b4193a",
             num: 0,
-            like: 0,
+            comment: 0,
             video: "",
             userId: $rootScope.CurrentUser.id,
             listUser: []

@@ -41,7 +41,7 @@ function ($stateParams, DataService, UtilService, youtubeEmbedUtils, $rootScope)
         return vm.vote.listUser.indexOf($rootScope.CurrentUser.id) > -1;
     }
 
-     vm.getContent = function (content) {
+    vm.getContent = function (content) {
         if (!content)
             return "";
         return content.replace(/\n/g, "<br/>")

@@ -15,10 +15,9 @@
       <img src="{{vm.post.img}}" ng-if="!vm.post.video"/>
     </div>
     <div class="event-content padding">
-      <p ng-bind-html="vm.getContent(vm.post.content)" ng-class="vm.showMoreStatus ? 'hung' : ''"></p>
-      <button class="button button-clear blue" ng-click="vm.showMore()">Xem thêm</button>
-      <ng-list-comment data="vm.post" ng-if="vm.post"></ng-list-comment>
-      <ng-box-comment data="vm.post"></ng-box-comment>
+      <p ng-bind-html="vm.getContent(vm.post.content)"></p>
+      <!-- <p ng-bind-html="vm.getContent(vm.post.content)" ng-class="vm.showMoreStatus ? 'hung' : ''"></p> -->
+      <!-- <button class="button button-clear blue" ng-click="vm.showMore()">Xem thêm</button> -->
     </div>
 
   </ion-content>

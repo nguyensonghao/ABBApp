@@ -1,0 +1,8 @@
+=== Get keystore ===
+keytool -list -v -keystore c:\users\admin\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
+keytool -exportcert  -keystore my-release-key.keystore  | openssl sha1 -binary | openssl base64
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore android-release-unsigned.apk alias_name
+zipalign -v 4 android-release-unsigned.apk android.apk

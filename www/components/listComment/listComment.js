@@ -7,18 +7,13 @@ app.directive('ngListComment', function () {
         },
         controller: ["$rootScope", "$scope", "UtilService", "DataService", "$timeout", function ($rootScope, $scope, UtilService, DataService, $timeout) {
             $scope.list = [];
-            firebase.database().ref('comments').orderByChild('voteId').equalTo($scope.vote.id).once("value", function(list) {
-                list = list.val();
-                var result = [];
-                for (var key in list) {
-                    list[key]['id'] = key;
-                    result.push(list[key]);
-                }
+            firebase.database().ref('comments').orderByChild('voteId').equalTo($scope.vote.id).on('child_added', function (comment) {
+                $scope.list.push(comment.val());
+            })
 
-                $timeout(function () {
-                    $scope.list = result;
-                })
-            });
+            $scope.getContent = function (content) {
+                return UtilService.getContent(content);
+            }
         }]
     }
 })

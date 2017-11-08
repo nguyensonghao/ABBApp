@@ -50,6 +50,12 @@ app.service('UtilService', ['$ionicLoading', '$ionicPopup', '$q', function ($ion
         return "http://img.youtube.com/vi/"+ id +"/0.jpg";
     }
 
+    service.getContent = function (content) {
+        if (!content)
+            return "";
+        return content.replace(/\n/g, "<br/>")
+    }
+
     service.takeImage = function () {
         var deferred = $q.defer();
         if (typeof cordova != 'undefined') {
