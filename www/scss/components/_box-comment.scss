@@ -1,0 +1,20 @@
+.comment-box{
+  .comment-input{
+    position: relative;
+    border: 1px solid $gray;
+    border-radius: 7px;
+    padding: 10px 40px 10px 10px;
+    max-height: 90px;
+    textarea{
+      border: none;
+      resize: none;
+      width: 100%;
+    }
+    button{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: $green;
+    }
+  }
+}

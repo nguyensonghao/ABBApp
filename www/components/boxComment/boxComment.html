@@ -1,4 +1,6 @@
 <div class="comment-box">
-	<textarea ng-model="message" placeholder="Nhập bình luận" rows="6" style="border: 1px solid #ddd; width: 100%"></textarea>
-    <button ion-button color="secondary" ng-click="send(message)">Gửi</button>
+  <div class="comment-input">
+    <textarea ng-model="message" placeholder="Nhập bình luận" rows="1"></textarea>
+    <button ng-click="send(message)" class="button button-icon icon ion-paper-airplane"></button>
+  </div>
 </div>

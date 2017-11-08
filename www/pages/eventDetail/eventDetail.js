@@ -1,7 +1,7 @@
 app.controller('EventDetailController', ['$stateParams', 'DataService', 'UtilService', 'youtubeEmbedUtils',
 function ($stateParams, DataService, UtilService, youtubeEmbedUtils) {
     var vm = this;
-
+    vm.showMoreStatus = false;
     var loadData = function () {
         UtilService.showLoading();
         DataService.findById('articles', $stateParams.id).then(function (value) {
@@ -23,6 +23,9 @@ function ($stateParams, DataService, UtilService, youtubeEmbedUtils) {
         if (!content)
             return "";
         return content.replace(/\n/g, "<br/>")
+    };
+    vm.showMore = function () {
+      vm.showMoreStatus = !vm.showMoreStatus;
     }
 
     loadData();

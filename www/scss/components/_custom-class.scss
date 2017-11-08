@@ -111,7 +111,7 @@
   color: $warning;
 }
 .blue{
-  color: $off-duty;
+  color: $off-duty !important;
 }
 .red-bg{
   background-color: $red;
@@ -129,4 +129,7 @@
 }
 .center {
   text-align: center;
+}
+.hung{
+  max-height: initial !important;
 }
