@@ -15,11 +15,9 @@
       <img src="{{vm.post.img}}" ng-if="!vm.post.video"/>
     </div>
     <div class="event-content">
-      <p class="padding">
-        {{vm.post.content}}
-      </p>
+      <p class="padding" ng-bind-html="vm.getContent(vm.post.content)"></p>
     </div>
-    <ng-list-comment data="vm.post" ng-if="vm.post"></ng-list-comment>
-    <ng-box-comment data="vm.post"></ng-box-comment>
+    <!-- <ng-list-comment data="vm.post" ng-if="vm.post"></ng-list-comment>
+    <ng-box-comment data="vm.post"></ng-box-comment> -->
   </ion-content>
 </ion-view>

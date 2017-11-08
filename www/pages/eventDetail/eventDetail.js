@@ -19,5 +19,11 @@ function ($stateParams, DataService, UtilService, youtubeEmbedUtils) {
         showinfo: 0
     };
 
+    vm.getContent = function (content) {
+        if (!content)
+            return "";
+        return content.replace(/\n/g, "<br/>")
+    }
+
     loadData();
 }])
