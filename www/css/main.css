@@ -10172,7 +10172,8 @@ a.button {
       height: 100%;
       -o-object-fit: cover;
          object-fit: cover;
-      border-radius: 7px; }
+      border-radius: 7px;
+      display: block; }
     .new-feed_item .item_content .item_footer {
       left: 50%;
       -webkit-transform: translateX(-50%);
