@@ -51,6 +51,25 @@ app.service('DataService', ['$q', function ($q) {
         return deferred.promise;
     }
 
+    service.findByField = function (collection, key, value) {
+        var deferred = $q.defer();
+        _ref.child(collection).orderByChild(key).equalTo(value).once("value", function(item) {
+            item = item.val();
+            var result = [];
+            if (item) {
+                for (var key in item) {
+                    item[key].id = key;
+                    result.push(item[key]);
+                }
+                deferred.resolve(result);
+            } else {
+                deferred.resolve(null);
+            }
+        });
+
+        return deferred.promise;
+    }
+
     service.update = function (collection, value) {
         var deferred = $q.defer();
         _ref.child(collection + '/' + value.id).update(value, function (data) {
