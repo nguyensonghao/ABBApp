@@ -1,0 +1,16 @@
+<ion-view  ng-controller="ListVoteController as vm" cache-view="false" class="home-view">
+  <ion-nav-bar class="bar-assertive" align-title="center">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-title>THÊM TIẾT MỤC</ion-nav-title>
+    <ion-nav-buttons side="right">
+      <i class="icon-login light" ng-click="$root.signOut()" style="font-size: 30px"></i>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content class="padding home-page" scroll="false">
+    <ion-list>
+      <ion-item ng-repeat="item in items">
+        
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

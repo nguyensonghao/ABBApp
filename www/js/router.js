@@ -37,6 +37,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       url: '/add-vote',
       templateUrl: 'pages/addVote/addVote.html'
     })
+    .state('list-vote', {
+      url: '/list-vote',
+      templateUrl: 'pages/listVote/listVote.html'
+    })
 
   var user = localStorage.getItem('currentUser');
   if (user && user != 'undefined') {
