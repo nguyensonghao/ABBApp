@@ -6,5 +6,7 @@ const MESSAGE = {
     PASSWORD_MAX: "Mật khẩu vào nhỏ hơn 32 ký tự",
     PASSWORD_CONFIRM_NOT_MATCH: "Mật khẩu nhập lại không đúng",
     EMAIL_FORMAT: 'Email không đúng định dạng',
-    EMAIL_REQUIRED: 'Email không được để trống'
+    EMAIL_REQUIRED: 'Email không được để trống',
+    TITLE_REQUIRED: 'Tiêu đề không được để trống',
+    CONTENT_REQUIRED: 'Nội dung không được để trống',
 }
