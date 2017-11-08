@@ -10146,7 +10146,7 @@ a.button {
     overflow: hidden;
     position: relative;
     margin-top: 20px;
-    height: 420px;
+    max-height: 420px;
     -webkit-box-shadow: 0 7px 9px 4px #afaeae;
             box-shadow: 0 7px 9px 4px #afaeae; }
     .new-feed_item .item_content .item_header {
@@ -10156,9 +10156,10 @@ a.button {
       z-index: 999; }
     .new-feed_item .item_content .item_title {
       color: #ffffff;
-      font-size: 25px;
+      font-size: 22px;
       font-weight: 700;
-      padding: 0 10px; }
+      padding: 0 10px;
+      line-height: 1.1; }
     .new-feed_item .item_content .item_count {
       color: #ffffff;
       padding-left: 10px;

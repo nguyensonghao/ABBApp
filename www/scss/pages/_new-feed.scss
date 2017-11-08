@@ -20,7 +20,7 @@
       overflow: hidden;
       position: relative;
       margin-top: 20px;
-      height: 420px;
+      max-height: 420px;
       box-shadow: 0 7px 9px 4px #afaeae;
       .item_header{
         position: absolute;
@@ -30,9 +30,10 @@
       }
       .item_title{
         color: #ffffff;
-        font-size: 25px;
+        font-size: 22px;
         font-weight: 700;
         padding: 0 10px;
+        line-height: 1.1;
       }
       .item_count{
         color: #ffffff;
