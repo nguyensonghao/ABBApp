@@ -8,25 +8,27 @@
   </ion-nav-bar>
   <ion-content class="padding add-vote-page">
     <form class="list" name="formAddVote">
-      <label class="item-input">
+      <label class="item">
         <input type="text" name="title" ng-model="vm.vote.title" placeholder="Tiêu đề" required>
       </label>
       <p class="error-validate" ng-show="formAddVote.title.$dirty && formAddVote.title.$invalid">
         <span ng-show="formAddVote.title.$error.required">{{TITLE_REQUIRED}}</span>
       </p>
-      <label class="item-img">
+      <div class="item-img">
         <button class="button button-small button-positive" ng-click="vm.getImage()">Chọn ảnh</button>
         <img src="img/feed-1.jpg"/>
-      </label>
-      <label class="item-input">
+      </div>
+      <label class="item">
         <textarea name="content" ng-model="vm.vote.content" placeholder="Nội dung" rows="6" required></textarea>
       </label>
       <p class="error-validate" ng-show="formAddVote.content.$dirty && formAddVote.content.$invalid">
         <span ng-show="formAddVote.content.$error.required">{{CONTENT_REQUIRED}}</span>
       </p>
-      <button class="button button-small button-positive" ng-click="vm.send()" ng-disabled="formAddVote.$invalid">
-        Thêm
-      </button>
+      <div class="button-add">
+        <button class="button button-small button-positive" ng-click="vm.send()" ng-disabled="formAddVote.$invalid">
+          Thêm
+        </button>
+      </div>
     </form>
   </ion-content>
 </ion-view>
