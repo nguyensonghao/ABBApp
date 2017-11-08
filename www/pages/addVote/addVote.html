@@ -15,7 +15,7 @@
         <span ng-show="formAddVote.title.$error.required">{{TITLE_REQUIRED}}</span>
       </p>
       <label class="item item-input">
-        <button class="button button-small button-positive">Chọn ảnh</button>
+        <button class="button button-small button-positive" ng-click="vm.getImage()">Chọn ảnh</button>
       </label>
       <label class="item item-input">
         <textarea name="content" ng-model="vm.vote.content" placeholder="Nội dung" rows="6" required></textarea>
@@ -23,7 +23,7 @@
       <p class="error-validate" ng-show="formAddVote.content.$dirty && formAddVote.content.$invalid">
         <span ng-show="formAddVote.content.$error.required">{{CONTENT_REQUIRED}}</span>
       </p>
-      <button class="button button-small button-positive" ng-click="vm.send()">
+      <button class="button button-small button-positive" ng-click="vm.send()" ng-disabled="formAddVote.$invalid">
         Thêm
       </button>
     </form>

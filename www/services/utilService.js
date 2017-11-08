@@ -1,4 +1,4 @@
-app.service('UtilService', ['$ionicLoading', '$ionicPopup', function ($ionicLoading, $ionicPopup) {
+app.service('UtilService', ['$ionicLoading', '$ionicPopup', '$q', function ($ionicLoading, $ionicPopup, $q) {
     var service = {};
     service.showLoading = function () {
         $ionicLoading.show();
@@ -48,6 +48,25 @@ app.service('UtilService', ['$ionicLoading', '$ionicPopup', function ($ionicLoad
 
     service.getThumBnailYoutube = function (id) {
         return "http://img.youtube.com/vi/"+ id +"/0.jpg";
+    }
+
+    service.takeImage = function () {
+        var deferred = $q.defer();
+        if (typeof cordova != 'undefined') {
+            navigator.camera.getPicture(function (imageURI) {
+                deferred.resolve(imageURI);
+            }, function (err) {
+                deferred.reject(imageURI)
+                console.log(err);
+            }, { 
+                quality: 50,
+                destinationType: Camera.DestinationType.FILE_URI
+            });
+        } else {
+            deferred.resolve("");
+        }
+
+        return deferred.promise;
     }
 
   return service;
