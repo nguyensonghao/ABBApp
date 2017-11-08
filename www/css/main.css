@@ -10227,7 +10227,7 @@ a.button {
 
 .event-detail .event-banner {
   position: relative;
-  height: 420px;
+  max-height: 420px;
   overflow: hidden;
   margin-bottom: 15px; }
   .event-detail .event-banner .event-title {
@@ -10251,7 +10251,8 @@ a.button {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-       object-fit: cover; }
+       object-fit: cover;
+    display: block; }
 
 .event-detail .event-content {
   padding-bottom: 30px; }
@@ -10326,6 +10327,14 @@ a.button {
       min-width: initial;
       padding-left: 30px;
       padding-right: 30px; }
+
+.add-vote-page .item-img {
+  max-height: 420px; }
+  .add-vote-page .item-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
 
 @media (max-width: 340px) {
   .sign-page {
