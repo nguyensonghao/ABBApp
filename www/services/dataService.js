@@ -80,5 +80,15 @@ app.service('DataService', ['$q', function ($q) {
         return deferred.promise;
     }
 
+    service.remove = function (collection, id) {
+        var deferred = $q.defer();
+        _ref.child(collection + '/' + id).remove(function (data) {
+            deferred.resolve(true);
+        }).catch(function (err) {
+            deferred.resolve(false);
+        })
+        return deferred.promise;
+    }
+
     return service;
 }])

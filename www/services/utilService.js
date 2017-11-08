@@ -56,17 +56,18 @@ app.service('UtilService', ['$ionicLoading', '$ionicPopup', '$q', function ($ion
         return content.replace(/\n/g, "<br/>")
     }
 
-    service.takeImage = function () {
+    service.takePicture = function (sourceType) {
         var deferred = $q.defer();
         if (typeof cordova != 'undefined') {
             navigator.camera.getPicture(function (imageURI) {
-                deferred.resolve(imageURI);
+                deferred.resolve('data:image/jpeg;base64,' + imageURI);
             }, function (err) {
-                deferred.reject(imageURI)
+                deferred.reject(err);
                 console.log(err);
             }, { 
                 quality: 50,
-                destinationType: Camera.DestinationType.FILE_URI
+                sourceType: sourceType,
+                destinationType: Camera.DestinationType.DATA_URL
             });
         } else {
             deferred.resolve("");

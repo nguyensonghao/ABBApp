@@ -9,4 +9,7 @@ const MESSAGE = {
     EMAIL_REQUIRED: 'Email không được để trống',
     TITLE_REQUIRED: 'Tiêu đề không được để trống',
     CONTENT_REQUIRED: 'Nội dung không được để trống',
+    IMAGE_REQUIRED: 'Hình ảnh không được để trống',
+    CONFIRM_DELETE_VOTE: 'Bạn có thực sự muốn xóa tiết mục này không?',
+    UPDATE_VOTE_SUCCESS: 'Chỉnh sửa bài đăng thành công.'
 }

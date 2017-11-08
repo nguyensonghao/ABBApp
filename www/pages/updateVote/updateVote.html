@@ -1,7 +1,7 @@
-<ion-view  ng-controller="AddVoteController as vm" cache-view="false" class="home-view">
+<ion-view  ng-controller="UpdateVoteController as vm" cache-view="false" class="home-view">
   <ion-nav-bar class="bar-assertive" align-title="center">
     <ion-nav-back-button></ion-nav-back-button>
-    <ion-nav-title>THÊM TIẾT MỤC</ion-nav-title>
+    <ion-nav-title>SỬA TIẾT MỤC</ion-nav-title>
     <ion-nav-buttons side="right">
       <i class="icon-login light" ng-click="$root.signOut()" style="font-size: 30px"></i>
     </ion-nav-buttons>
@@ -12,14 +12,14 @@
         <input type="text" name="title" ng-model="vm.vote.title" placeholder="Tiêu đề" required>
       </label>
       <label class="item-img">
-        <button class="button button-small button-positive" ng-click="vm.getImage()">Chọn ảnh</button>
+        <button class="button button-small button-positive" ng-click="vm.getImage()">Thay ảnh mới</button>
       </label>
       <img src="{{vm.imageUrl}}" ng-if="vm.imageUrl" style="width: 100%"/>
       <label class="item-input">
         <textarea name="content" ng-model="vm.vote.content" placeholder="Nội dung" rows="6" required></textarea>
       </label>
       <button class="button button-small button-positive" ng-click="vm.send()">
-        Thêm
+        Chỉnh sửa
       </button>
     </form>
   </ion-content>
