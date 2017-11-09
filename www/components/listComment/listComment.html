@@ -1,6 +1,10 @@
+<p class="padding blue">7 bình luận</p>
 <ul class="list-comment">
     <li class="list-comment-item" ng-repeat="item in list">
-      	<p class="user-comment">{{item.userName}}</p>
-    	<p class="content-comment" ng-bind-html="getContent(item.content)"></p>
+      <span class="user-comment">{{item.userName}}</span>
+      <span>
+        <span class="content-comment" ng-bind-html="getContent(item.content)"></span>
+      </span>
+      <p class="time-comment">9 giờ</p>
     </li>
 </ul>

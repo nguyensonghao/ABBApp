@@ -1,8 +1,9 @@
 .list-comment{
   border-top: 1px solid $gray;
   padding-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
   .list-comment-item{
-    display: flex;
     margin-bottom: 5px;
     .user-comment{
       color: $blue;
@@ -11,6 +12,13 @@
     }
     .content-comment{
       color: #000;
+      font-size: 14px;
+      word-break: break-word;
+      white-space: normal;
+    }
+    .time-comment{
+      font-size: 12px;
+      color: $gray;
     }
   }
 }

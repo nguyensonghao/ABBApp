@@ -11,16 +11,18 @@
       <label class="item">
         <input type="text" name="title" ng-model="vm.vote.title" placeholder="Tiêu đề" required>
       </label>
-      <label class="item-img">
+      <div class="item-img">
         <button class="button button-small button-positive" ng-click="vm.getImage()">Chọn ảnh</button>
-      </label>
-      <img src="{{vm.imageUrl}}" ng-if="vm.imageUrl" style="width: 100%"/>
-      <label class="item-input">
+        <img src="{{vm.imageUrl}}" ng-if="vm.imageUrl"/><img src="img/feed-2.jpg"/>
+      </div>
+      <label class="item add-des">
         <textarea name="content" ng-model="vm.vote.content" placeholder="Nội dung" rows="6" required></textarea>
       </label>
-      <button class="button button-small button-positive" ng-click="vm.send()">
-        Thêm
-      </button>
+      <div class="button-add">
+        <button class="button button-small button-positive" ng-click="vm.send()">
+          Thêm
+        </button>
+      </div>
     </form>
   </ion-content>
 </ion-view>

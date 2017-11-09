@@ -10132,18 +10132,23 @@ a.button {
 
 .list-comment {
   border-top: 1px solid #ADADAD;
-  padding-top: 10px; }
+  padding-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px; }
   .list-comment .list-comment-item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     margin-bottom: 5px; }
     .list-comment .list-comment-item .user-comment {
       color: #007aff;
       font-weight: bold;
       margin-right: 10px; }
     .list-comment .list-comment-item .content-comment {
-      color: #000; }
+      color: #000;
+      font-size: 14px;
+      word-break: break-word;
+      white-space: normal; }
+    .list-comment .list-comment-item .time-comment {
+      font-size: 12px;
+      color: #ADADAD; }
 
 .comment-box .comment-input {
   position: relative;
@@ -10334,14 +10339,23 @@ a.button {
   margin-top: 10px;
   margin-bottom: 10px; }
   .add-vote-page .item-img img {
+    margin-top: 10px;
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover; }
 
+.add-vote-page .add-des {
+  padding: 10px; }
+  .add-vote-page .add-des textarea {
+    width: 100%;
+    resize: none; }
+
 .add-vote-page .button-add {
   text-align: center;
   margin-top: 10px; }
+  .add-vote-page .button-add button {
+    padding: 7px 15px; }
 
 @media (max-width: 340px) {
   .sign-page {
