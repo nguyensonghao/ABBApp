@@ -9809,7 +9809,7 @@ a.button {
       -ms-flex-align: center;
           align-items: center; }
 
-.flex-row-between, .sign-page .login-footer {
+.flex-row-between, .sign-page .login-footer, .list-vote .action-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10356,6 +10356,15 @@ a.button {
   margin-top: 10px; }
   .add-vote-page .button-add button {
     padding: 7px 15px; }
+
+.list-vote .vote-title {
+  font-size: 20px;
+  text-overflow: initial;
+  overflow: initial;
+  white-space: initial; }
+
+.list-vote .action-button button:first-child {
+  margin-right: 10px; }
 
 @media (max-width: 340px) {
   .sign-page {

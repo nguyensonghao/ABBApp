@@ -6,12 +6,14 @@
       <i class="icon-login light" ng-click="$root.signOut()" style="font-size: 30px"></i>
     </ion-nav-buttons>
   </ion-nav-bar>
-  <ion-content class="padding home-page has-header" scroll="false" ng-if="vm.loadDone">
-    <ion-list ng-if="vm.listVote">
+  <ion-content class="padding home-page has-header" ng-if="vm.loadDone">
+    <ion-list ng-if="vm.listVote" class="list-vote">
       <ion-item ng-repeat="vote in vm.listVote">
-        <p>{{vote.title}}</p>
-        <button class="button button-small button-positive" ng-click="vm.delete(vote, $index)">Xóa</button>
-        <button class="button button-small button-positive" ui-sref="update-vote({id: vote.id})">Sửa</button>
+        <p class="vote-title">{{vote.title}}</p>
+        <div class="action-button">
+          <button class="button button-full button-assertive" ng-click="vm.delete(vote, $index)">Xóa</button>
+          <button class="button button-full button-positive" ui-sref="update-vote({id: vote.id})">Sửa</button>
+        </div>
       </ion-item>
     </ion-list>
     <p class="alert" ng-if="!vm.listVote">Bạn đang không có bài đăng nào</p>

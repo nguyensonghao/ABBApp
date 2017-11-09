@@ -26,3 +26,20 @@
     }
   }
 }
+.list-vote{
+  .vote-title{
+    font-size: 20px;
+    text-overflow: initial;
+    overflow: initial;
+    white-space: initial;
+  }
+  .action-button{
+    @extend .flex-row-between;
+    button{
+      &:first-child{
+        margin-right: 10px;
+
+      }
+    }
+  }
+}
