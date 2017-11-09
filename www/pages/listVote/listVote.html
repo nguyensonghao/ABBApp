@@ -1,4 +1,4 @@
-<ion-view  ng-controller="ListVoteController as vm" cache-view="false" class="home-view">
+<ion-view  ng-controller="ListVoteController as vm" cache-view="false" class="home-view list-vote">
   <ion-nav-bar class="bar-assertive" align-title="center">
     <ion-nav-back-button></ion-nav-back-button>
     <ion-nav-title>TIẾT MỤC CỦA BẠN</ion-nav-title>
@@ -7,15 +7,32 @@
     </ion-nav-buttons>
   </ion-nav-bar>
   <ion-content class="padding home-page has-header" ng-if="vm.loadDone">
-    <ion-list ng-if="vm.listVote" class="list-vote">
-      <ion-item ng-repeat="vote in vm.listVote">
-        <p class="vote-title">{{vote.title}}</p>
-        <div class="action-button">
-          <button class="button button-full button-assertive" ng-click="vm.delete(vote, $index)">Xóa</button>
-          <button class="button button-full button-positive" ui-sref="update-vote({id: vote.id})">Sửa</button>
+    <div class="new-feed_list" ng-if="vm.listVote">
+      <div class="new-feed_item" ng-repeat="vote in vm.listVote">
+        <div class="item_content">
+          <div class="item_header">
+            <p class="item_title">{{vote.title}}</p>
+            <p class="item_count">
+              <i class="icon icon-badge"></i>{{vote.num}}
+              <i class="icon icon-speech"></i>{{vote.comment}}
+            </p>
+          </div>
+          <div class="bg-opacity"></div>
+          <img src="{{vote.img}}"/>
+          <div class="item_footer">
+            <button class="button button-small button-assertive" ng-click="vm.delete(vote, $index)">
+              <i class="ion ion-trash-a"></i> Xóa
+            </button>
+            <button class="button button-small button-stable" ui-sref="update-vote({id: vote.id})">
+              <i class="ion ion-edit"></i> Chỉnh sửa
+            </button>
+            <button class="button button-small button-positive" ui-sref="vote-detail({id: vote.id})">
+              <i class="ion ion-clipboard"></i> Chi tiết
+            </button>
+          </div>
         </div>
-      </ion-item>
-    </ion-list>
+      </div>      
+    </div>
     <p class="alert" ng-if="!vm.listVote">Bạn đang không có bài đăng nào</p>
   </ion-content>
 </ion-view>

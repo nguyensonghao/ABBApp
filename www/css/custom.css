@@ -28,3 +28,8 @@
 .home-view ion-header-bar {
     border: none !important;
 }
+
+.list-vote .item_footer {
+    text-align: left !important;
+    padding-left: 10px;
+}
