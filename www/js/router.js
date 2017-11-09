@@ -1,4 +1,4 @@
-var app = angular.module('AbbApp', ['ionic', 'youtube-embed']);
+var app = angular.module('AbbApp', ['ionic', 'youtube-embed', 'ion-floating-menu']);
 app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $stateProvider
     .state('home', {

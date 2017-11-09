@@ -19,7 +19,7 @@ function (AuthService, LocalStorageService, $rootScope, $state, UtilService , $i
                 disableBack: true
             });
             
-            $state.go('add-vote');
+            $state.go('home');
         })
     }
 

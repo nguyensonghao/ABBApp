@@ -32,6 +32,11 @@ function($ionicPlatform, $rootScope, $state, LocalStorageService, $location, $io
   // Config firebase key
     firebase.initializeApp(FIREBASE_CONFIG);
     $rootScope.CurrentUser = LocalStorageService.getItem('currentUser');
+    if (!$rootScope.CurrentUser) {
+        setTimeout(function () {
+            $state.go('sign-in');
+        }, 100);
+    }
 }])
 
 app.controller('AppController', ['UtilService', 'AuthService', '$state', '$rootScope',

@@ -14,6 +14,12 @@ app.directive('ngListComment', function () {
             $scope.getContent = function (content) {
                 return UtilService.getContent(content);
             }
+
+            $scope.getTime = function (time) {
+                if (time)
+                    return moment(new Date(parseInt(time))).format('hh:mm:ss - DD/MM/YYYY');
+                return "";
+            }
         }]
     }
 })

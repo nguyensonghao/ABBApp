@@ -11,5 +11,6 @@ const MESSAGE = {
     CONTENT_REQUIRED: 'Nội dung không được để trống',
     IMAGE_REQUIRED: 'Hình ảnh không được để trống',
     CONFIRM_DELETE_VOTE: 'Bạn có thực sự muốn xóa tiết mục này không?',
-    UPDATE_VOTE_SUCCESS: 'Chỉnh sửa bài đăng thành công.'
+    UPDATE_VOTE_SUCCESS: 'Chỉnh sửa bài đăng thành công.',
+    INSERT_VOTE_SUCCESS: 'Thêm bài đăng thành công.',
 }

@@ -1,4 +1,4 @@
-app.controller('NewFeedController', ['DataService', 'UtilService', '$stateParams', function (DataService, UtilService, $stateParams) {
+app.controller('NewFeedController', ['DataService', 'UtilService', '$stateParams', '$state', function (DataService, UtilService, $stateParams, $state) {
     var vm = this;
 
     var loadData = function () {
@@ -13,6 +13,14 @@ app.controller('NewFeedController', ['DataService', 'UtilService', '$stateParams
     vm.changeTabs = function (type) {
         vm.title = type == 'feeds' ? 'SỰ KIỆN' : 'TIẾT MỤC';
         vm.type = type;
+    }
+
+    vm.addVote = function () {
+        $state.go('add-vote');
+    }
+
+    vm.listVote = function () {
+        $state.go('list-vote');
     }
 
     loadData();

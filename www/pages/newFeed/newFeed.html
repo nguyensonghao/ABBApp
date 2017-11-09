@@ -14,4 +14,8 @@
     <ng-feeds ng-if="vm.type == 'feeds'"></ng-feeds>
     <ng-votes ng-if="vm.type != 'feeds'"></ng-votes>
   </ion-content>
+  <ion-floating-menu menu-color="#ea2227" menu-open-color="#ea2227" ng-if="vm.type != 'feeds'">
+    <ion-floating-item icon="ion-edit" button-color="white" icon-color="black" click="vm.addVote()" text="Thêm tiết mục"></ion-floating-item>
+    <ion-floating-item icon="ion-navicon-round" button-color="white" icon-color="black" text="Tiết mục của bạn" click="vm.listVote()"></ion-floating-item>
+  </ion-floating-menu>
 </ion-view>

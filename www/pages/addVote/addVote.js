@@ -20,10 +20,9 @@ function ($stateParams, DataService, UtilService, $rootScope, $ionicActionSheet)
                     listUser: [],
                     comment: 0,
                 }).then(function (result) {
-                    vm.loadDone = false;
                     vm.vote = {};
                     vm.imageUrl = "";
-                    vm.loadDone = true;
+                    UtilService.showAlert($rootScope.INSERT_VOTE_SUCCESS);
                     UtilService.hideLoading();
                 }).catch(function (e) {
                     UtilService.hideLoading();
