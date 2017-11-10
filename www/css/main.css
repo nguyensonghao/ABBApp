@@ -10262,9 +10262,7 @@ a.button {
 .event-detail .event-content {
   padding-bottom: 30px; }
   .event-detail .event-content > p {
-    line-height: 18px;
-    max-height: 90px;
-    overflow: hidden; }
+    line-height: 18px; }
 
 .home-page .logo-container {
   margin-top: 30%; }

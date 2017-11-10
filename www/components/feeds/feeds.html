@@ -4,7 +4,7 @@
 	 	<p class="item_day">{{getDay(post.time)}}</p>
 	  	<div class="item_content" ng-class="classVideo(post.video)">
 	    	<div class="item_header">
-	      		<p class="item_title">{{post.title}}</p>
+	      		<p class="item_title" ng-bind-html="$root.getContent(post.title)"></p>
 			</div>
 			<div class="bg-opacity" ng-if="!post.video"></div>
 	    	<img src="{{post.img}}" ng-if="!post.video"/>

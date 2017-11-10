@@ -8,15 +8,15 @@
   </ion-nav-bar>
   <ion-content class="event-detail has-footer">
     <div class="event-banner" style="margin-bottom: 0">
-      <p class="event-title">{{vm.vote.title}}</p>
+      <p class="event-title" ng-bind-html="$root.getContent(vm.vote.title)"></p>
       <div class="bg-opacity"></div>
       <img src="{{vm.vote.img}}"/>
     </div>
     <div class="event-content">
       <p class="padding" ng-bind-html="vm.getContent(vm.vote.content)"></p>
     </div>
-    <ng-list-comment data="vm.vote" ng-if="vm.vote"></ng-list-comment>
-    <ng-box-comment data="vm.vote"></ng-box-comment>
+    <!-- <ng-list-comment data="vm.vote" ng-if="vm.vote"></ng-list-comment>
+    <ng-box-comment data="vm.vote"></ng-box-comment> -->
   </ion-content>
   <ion-footer-bar>
     <button class="button button-around button-assertive" ng-if="vm.vote" ng-disabled="vm.isVoted()" ng-click="vm.voteItem()">Bình chọn</button>

@@ -52,4 +52,8 @@ app.controller('AppController', ['UtilService', 'AuthService', '$state', '$rootS
             }
         });
     }
+
+    $rootScope.getContent = function (content) {
+        return UtilService.getContent(content);
+    }
 }])
