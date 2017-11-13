@@ -20,6 +20,7 @@
         "cordova-plugin-customurlscheme": "~4.3.0",
         "cordova-plugin-device": "^1.1.4",
         "cordova-plugin-facebook4": "^1.9.1",
+        "cordova-plugin-fcm": "^2.1.2",
         "cordova-plugin-inappbrowser": "~1.7.1",
         "cordova-plugin-splashscreen": "^4.0.3",
         "cordova-plugin-statusbar": "^2.2.1",
@@ -48,7 +49,8 @@
                 "APP_ID": "248366369025776",
                 "APP_NAME": "ABBAPP"
             },
-            "cordova-plugin-camera": {}
+            "cordova-plugin-camera": {},
+            "cordova-plugin-fcm": {}
         },
         "platforms": [
             "android"

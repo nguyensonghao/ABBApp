@@ -25,10 +25,6 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
       url: '/sign-in',
       templateUrl: 'pages/signIn/signIn.html'
     })
-    .state('vote', {
-      url: '/vote',
-      templateUrl: 'pages/vote/vote.html'
-    })
     .state('vote-detail', {
       url: '/vote-detail/:id',
       templateUrl: 'pages/voteDetail/voteDetail.html'

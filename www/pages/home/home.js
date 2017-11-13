@@ -2,7 +2,7 @@
 
 angular.module('AbbApp').controller('HomeController', ["$rootScope", '$interval', 'UtilService', 'AuthService', '$state', function ($rootScope, $interval, UtilService, AuthService, $state) {
   var vm = this;
-  vm.title = APP_NAME;
+  var date = new Date(COUNT_DOWN_TIME).getTime();
 
   var loadData = function () {
     countDownTime();
@@ -12,15 +12,28 @@ angular.module('AbbApp').controller('HomeController', ["$rootScope", '$interval'
   }
 
   var countDownTime = function () {
-    var date = new Date(COUNT_DOWN_TIME).getTime();
     var currentDate = new Date().getTime();
-    var time = new Date(date - currentDate);
-    vm.countDownTime = [
-      { title: 'Ngày', time: time.getDate() },
-      { title: 'Giờ', time: time.getHours() },
-      { title: 'Phút', time: time.getMinutes() },
-      { title: 'Giây', time: time.getSeconds() }
-    ]
+    var distance = date - currentDate;
+    if (distance <= 0) {
+      vm.countDownTime = [
+        { title: 'Ngày', time: '0' },
+        { title: 'Giờ', time: '0' },
+        { title: 'Phút', time: '0' },
+        { title: 'Giây', time: '0' }
+      ]
+    } else {
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      vm.countDownTime = [
+        { title: 'Ngày', time: days },
+        { title: 'Giờ', time: hours },
+        { title: 'Phút', time: minutes },
+        { title: 'Giây', time: seconds }
+      ]
+    }
   }
   
   loadData();

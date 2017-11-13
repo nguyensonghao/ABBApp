@@ -1,2 +1,2 @@
 const APP_NAME = "ABBapp";
-const COUNT_DOWN_TIME = "October 18, 2017 00:00:00"
+const COUNT_DOWN_TIME = "November 18, 2017 08:30:00"

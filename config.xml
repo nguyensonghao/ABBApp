@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget android-versionCode="7" id="com.pg.abb" version="0.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>LET'S WRITE THE FUTURE</name>
+    <name>Company Day</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
@@ -97,6 +97,7 @@
         <variable name="APP_ID" value="248366369025776" />
         <variable name="APP_NAME" value="ABBAPP" />
     </plugin>
+    <plugin name="cordova-plugin-fcm" spec="^2.1.2" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-statusbar" spec="^2.2.1" />

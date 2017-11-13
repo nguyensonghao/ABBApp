@@ -15,8 +15,8 @@
     <div class="event-content">
       <p class="padding" ng-bind-html="vm.getContent(vm.vote.content)"></p>
     </div>
-    <!-- <ng-list-comment data="vm.vote" ng-if="vm.vote"></ng-list-comment>
-    <ng-box-comment data="vm.vote"></ng-box-comment> -->
+    <ng-list-comment data="vm.vote" ng-if="vm.vote"></ng-list-comment>
+    <ng-box-comment data="vm.vote"></ng-box-comment>
   </ion-content>
   <ion-footer-bar>
     <button class="button button-around button-assertive" ng-if="vm.vote" ng-disabled="vm.isVoted()" ng-click="vm.voteItem()">Bình chọn</button>

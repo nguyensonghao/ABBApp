@@ -15,13 +15,5 @@ app.controller('NewFeedController', ['DataService', 'UtilService', '$stateParams
         vm.type = type;
     }
 
-    vm.addVote = function () {
-        $state.go('add-vote');
-    }
-
-    vm.listVote = function () {
-        $state.go('list-vote');
-    }
-
     loadData();
 }])
