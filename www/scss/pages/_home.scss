@@ -1,4 +1,14 @@
 .home-page{
+  &.screen-first{
+    background-image: url('../img/home-screen.png');
+    background-size: cover;
+    background-position: center;
+  }
+  &.screen-last{
+    background-image: url('../img/home-screen-2.png');
+    background-size: cover;
+    background-position: center;
+  }
   .logo-container{
     margin-top: 30%;
   }

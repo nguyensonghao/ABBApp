@@ -1,15 +1,15 @@
 <h2 class="heading">Các tiết mục</h2>
 <div class="new-feed_list">
   <div class="new-feed_item" ng-repeat="vote in votes | orderBy : '-num'" ng-click="detail(vote)">
+    <p class="item_title" ng-bind-html="$root.getContent(vote.title)"></p>
     <div class="item_content">
       <div class="item_header">
-        <p class="item_title" ng-bind-html="$root.getContent(vote.title)"></p>
         <p class="item_count">
           <i class="icon icon-badge"></i>{{vote.num}}
           <!-- <i class="icon icon-speech"></i>{{vote.comment}} -->
         </p>
       </div>
-      <div class="bg-opacity"></div>
+      <!--<div class="bg-opacity"></div>-->
       <img src="{{vote.img}}"/>
       <div class="item_footer">
         <button class="button button-around button-white" ng-disabled="isVoted(vote)" ng-click="voteItem(vote, $event)">
