@@ -15,11 +15,18 @@
       font-size: 25px;
       font-weight: 800;
     }
+    .item_title{
+      color: #000;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin: 10px 0;
+    }
+
     .item_content{
       border-radius: 7px;
       overflow: hidden;
       position: relative;
-      margin-top: 20px;
       max-height: 420px;
       box-shadow: 0 7px 9px 4px #afaeae;
       .item_header{
@@ -27,13 +34,6 @@
         top: 10px;
         left: 0;
         z-index: 999;
-      }
-      .item_title{
-        color: #ffffff;
-        font-size: 22px;
-        font-weight: 700;
-        padding: 0 10px;
-        line-height: 1.1;
       }
       .item_count{
         color: #ffffff;

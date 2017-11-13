@@ -10180,11 +10180,16 @@ a.button {
   .new-feed_item .item_day {
     font-size: 25px;
     font-weight: 800; }
+  .new-feed_item .item_title {
+    color: #000;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 10px 0; }
   .new-feed_item .item_content {
     border-radius: 7px;
     overflow: hidden;
     position: relative;
-    margin-top: 20px;
     max-height: 420px;
     -webkit-box-shadow: 0 7px 9px 4px #afaeae;
             box-shadow: 0 7px 9px 4px #afaeae; }
@@ -10193,12 +10198,6 @@ a.button {
       top: 10px;
       left: 0;
       z-index: 999; }
-    .new-feed_item .item_content .item_title {
-      color: #ffffff;
-      font-size: 22px;
-      font-weight: 700;
-      padding: 0 10px;
-      line-height: 1.1; }
     .new-feed_item .item_content .item_count {
       color: #ffffff;
       padding-left: 10px;
@@ -10236,14 +10235,12 @@ a.button {
   overflow: hidden;
   margin-bottom: 15px; }
   .event-detail .event-banner .event-title {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: #ffffff;
+    color: #000;
     font-size: 25px;
     font-weight: 700;
     padding-right: 30px;
-    z-index: 9999; }
+    z-index: 9999;
+    margin: 10px 0; }
   .event-detail .event-banner .icon {
     position: absolute;
     top: 10px;
@@ -10263,6 +10260,16 @@ a.button {
   padding-bottom: 30px; }
   .event-detail .event-content > p {
     line-height: 18px; }
+
+.home-page.screen-first {
+  background-image: url("../img/home-screen.png");
+  background-size: cover;
+  background-position: center; }
+
+.home-page.screen-last {
+  background-image: url("../img/home-screen-2.png");
+  background-size: cover;
+  background-position: center; }
 
 .home-page .logo-container {
   margin-top: 30%; }
