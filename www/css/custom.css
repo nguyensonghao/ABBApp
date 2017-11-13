@@ -33,3 +33,7 @@
     text-align: left !important;
     padding-left: 10px;
 }
+
+.screen-last .row {
+    display: none;
+}
