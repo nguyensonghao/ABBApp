@@ -22,6 +22,25 @@ function($ionicPlatform, $rootScope, $state, LocalStorageService, $location, $io
         if(window.StatusBar) {
             StatusBar.styleDefault();
         }
+
+        FCMPlugin.subscribeToTopic('newFeed');
+        // Config notify fcm
+        FCMPlugin.onNotification(function(data) {
+            alert('test');
+            // if (data.wasTapped) {
+            //     // alert(JSON.stringify(data));
+            // } else {
+            //     if (LocalStorageService.getItem('currentUser')) {
+            //         $state.go('sign-in');
+            //     } else {
+            //         if (data.type == 'feeds') {
+            //             $state.go('event-detail', {id: data.id});
+            //         } else {
+            //             $state.go('vote-detail', {id: data.id});
+            //         }
+            //     }
+            // }
+        });
     });
 
     // Change constants message to rootScope
