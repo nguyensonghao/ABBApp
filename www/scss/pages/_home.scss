@@ -1,4 +1,11 @@
 .home-page{
+  .wrap-content{
+    position: relative;
+    height: 100%;
+  }
+  .wrap-time{
+    @include position-center;
+  }
   &.screen-first{
     background-image: url('../img/home-screen.png');
     background-size: cover;
@@ -9,8 +16,12 @@
     background-size: cover;
     background-position: center;
   }
-  .logo-container{
-    margin-top: 30%;
+  .wrap-logo{
+    text-align: right;
+    img{
+      width: 100px;
+
+    }
   }
   .time{
     background: #FFFFFF;
