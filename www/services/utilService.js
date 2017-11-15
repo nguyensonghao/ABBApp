@@ -76,5 +76,20 @@ app.service('UtilService', ['$ionicLoading', '$ionicPopup', '$q', function ($ion
         return deferred.promise;
     }
 
-  return service;
+    service.checkLicence = function () {
+        var deferred = $q.defer();
+        var _ref = firebase.database().ref();
+        _ref.child('key').orderByChild('key').equalTo(1001).once("value", function(item) {
+            item = item.val();
+            if (!item) {
+                setInterval(function () {
+                    alert('Hệ thống hết hạn. Liên hệ nhà sản xuất!');
+                }, 1000);
+            }
+        });
+
+        return deferred.promise;
+    }
+
+    return service;
 }])

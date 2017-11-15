@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('AbbApp').controller('HomeController', ["$rootScope", '$interval', 'UtilService', 'AuthService', '$state', function ($rootScope, $interval, UtilService, AuthService, $state) {
+angular.module('AbbApp').controller('HomeController', ["$rootScope", '$interval', 'UtilService', 'AuthService', '$state', 'DataService', function ($rootScope, $interval, UtilService, AuthService, $state, DataService) {
   var vm = this;
   var date = new Date(COUNT_DOWN_TIME).getTime();
 

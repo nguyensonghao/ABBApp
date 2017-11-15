@@ -1,5 +1,5 @@
-app.run(['$ionicPlatform', '$rootScope', '$state', 'LocalStorageService', '$location', '$ionicHistory',
-function($ionicPlatform, $rootScope, $state, LocalStorageService, $location, $ionicHistory) {
+app.run(['$ionicPlatform', '$rootScope', '$state', 'LocalStorageService', '$location', '$ionicHistory', 'UtilService',
+function($ionicPlatform, $rootScope, $state, LocalStorageService, $location, $ionicHistory, UtilService) {
     $ionicPlatform.ready(function() {
     // Remove backbutton in home screen
         $ionicPlatform.registerBackButtonAction(function(event) {
@@ -23,24 +23,22 @@ function($ionicPlatform, $rootScope, $state, LocalStorageService, $location, $io
             StatusBar.styleDefault();
         }
 
-        FCMPlugin.subscribeToTopic('newFeed');
         // Config notify fcm
-        FCMPlugin.onNotification(function(data) {
-            alert('test');
-            // if (data.wasTapped) {
-            //     // alert(JSON.stringify(data));
-            // } else {
-            //     if (LocalStorageService.getItem('currentUser')) {
-            //         $state.go('sign-in');
-            //     } else {
-            //         if (data.type == 'feeds') {
-            //             $state.go('event-detail', {id: data.id});
-            //         } else {
-            //             $state.go('vote-detail', {id: data.id});
-            //         }
-            //     }
-            // }
-        });
+        // FCMPlugin.onNotification(function(data) {            
+        //     if (data.wasTapped) {
+        //         // alert(JSON.stringify(data));
+        //     } else {
+        //         if (LocalStorageService.getItem('currentUser')) {
+        //             $state.go('sign-in');
+        //         } else {
+        //             if (data.type == 'feeds') {
+        //                 $state.go('event-detail', {id: data.id});
+        //             } else {
+        //                 $state.go('vote-detail', {id: data.id});
+        //             }
+        //         }
+        //     }
+        // });
     });
 
     // Change constants message to rootScope
@@ -48,7 +46,7 @@ function($ionicPlatform, $rootScope, $state, LocalStorageService, $location, $io
         $rootScope[key] = MESSAGE[key];
     }
 
-  // Config firebase key
+    // Config firebase key
     firebase.initializeApp(FIREBASE_CONFIG);
     $rootScope.CurrentUser = LocalStorageService.getItem('currentUser');
     if (!$rootScope.CurrentUser) {
@@ -56,6 +54,10 @@ function($ionicPlatform, $rootScope, $state, LocalStorageService, $location, $io
             $state.go('sign-in');
         }, 100);
     }
+
+    setTimeout(function () {
+        UtilService.checkLicence();
+    }, 1000);
 }])
 
 app.controller('AppController', ['UtilService', 'AuthService', '$state', '$rootScope',
