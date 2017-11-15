@@ -10261,6 +10261,17 @@ a.button {
   .event-detail .event-content > p {
     line-height: 18px; }
 
+.home-page .wrap-content {
+  position: relative;
+  height: 100%; }
+
+.home-page .wrap-time {
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
 .home-page.screen-first {
   background-image: url("../img/home-screen.png");
   background-size: cover;
@@ -10271,8 +10282,10 @@ a.button {
   background-size: cover;
   background-position: center; }
 
-.home-page .logo-container {
-  margin-top: 30%; }
+.home-page .wrap-logo {
+  text-align: right; }
+  .home-page .wrap-logo img {
+    width: 100px; }
 
 .home-page .time {
   background: #FFFFFF;

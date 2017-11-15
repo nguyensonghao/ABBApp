@@ -6,29 +6,31 @@
   </ion-nav-bar>
   <!--add class screen-first when clock coundownt and screen-last when count finished-->
   <ion-content class="padding home-page" scroll="false" ng-class="vm.countDownStatus">
-    <div class="logo-container center" style="visibility: hidden">
-      <img src="img/logo.png" class="logo">
-    </div>
-    <div class="row">
-      <div class="col-25 pd-horizontal-3" ng-repeat="count in vm.countDownTime">
-        <div class="time center">
-          <p class="time_number">{{count.time}}</p>
-          <p class="time_title">{{count.title}}</p>
+    <div class="wrap-content">
+      <div class="wrap-logo">
+        <img src="img/app-abb-icon.png" class="logo">
+      </div>
+      <div class="row wrap-time">
+        <div class="col-25 pd-horizontal-3" ng-repeat="count in vm.countDownTime">
+          <div class="time center">
+            <p class="time_number">{{count.time}}</p>
+            <p class="time_title">{{count.title}}</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="action">
-      <div class="action-item" ui-sref="new-feed({type: 'feeds'})">
-        <button class="button-circle">
-          <i class="icon icon-diamond"></i>
-        </button>
-        <p>Sự kiện</p>
-      </div>
-      <div class="action-item" ui-sref="new-feed({type: 'votes'})">
-        <button class="button-circle">
-          <i class="icon icon-badge"></i>
-        </button>
-        <p>Bình chọn</p>
+      <div class="action">
+        <div class="action-item" ui-sref="new-feed({type: 'feeds'})">
+          <button class="button-circle">
+            <i class="icon icon-diamond"></i>
+          </button>
+          <p>Sự kiện</p>
+        </div>
+        <div class="action-item" ui-sref="new-feed({type: 'votes'})">
+          <button class="button-circle">
+            <i class="icon icon-badge"></i>
+          </button>
+          <p>Bình chọn</p>
+        </div>
       </div>
     </div>
   </ion-content>
